@@ -1,0 +1,24 @@
+{% extends "base_page.html" %}
+{% load static %}
+{% block content_wrapper %}
+<div class="container" id="main_container">
+
+    <h3>Graphics</h3>
+    <div class="row">
+        <div class="span3">
+        <a href="/graphics/sphere" class="thumbnail">
+            <img src="{% static "img/spherethumb.jpg"%}">
+            <div class="gametext">Spheres and Swirls</div>
+        </a>
+        </div>
+
+        <div class="span3">
+        <a href="/graphics/face" class="thumbnail">
+            <img src="{% static "img/facethumb.jpg"%}">
+            <div class="gametext">Wireframe/Textured Face</div>
+        </a>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+{% endblock %}
