@@ -1,0 +1,53 @@
+{% extends "base_page.html" %}
+{% load static %}
+<style>
+h1 { border: 1px solid #888; margin-left: 50px; width: 200px; }
+#main_container{
+    text-align: center;
+}
+</style>
+{% block content_wrapper %}
+<div class="container" id="main_container">
+
+    <div class="row">
+        <div class="span4"  style="border-right: 1px solid #FFFFFF">
+            <div class="span2">
+                <img src="{% static "img/rob.png"%}">
+            </div>
+            <div class="DescriptionText">
+                <div class="span4" style="border-top: 1px solid #ffffff; margin-top: 2%;">
+                    Rob Butler - Halifax, NS</br>
+                    robbutler902@gmail.com</br>
+                    Software Engineer at <a href="http://www.orpheusinteractive.com/">Orpheus Interactive</a></br>
+                    <div style="border-top: 1px solid #ffffff; margin-top: 2%;">
+                        <a href="https://github.com/rbrt" style="margin-top:2%">Github</a></br>
+                        <a href="https://www.facebook.com/rob.butler.7737">Facebook</a></br>
+                        <a href="https://twitter.com/BoTreats">Twitter</a></br>
+                    </div>
+                </div>
+
+
+            </div>
+        </a>
+        </div>
+        <div class="span7">
+            <h4>I make things. Including this page. Which is still being made.</h4>
+
+            I've been working professionally as a game developer since 2013 and I'm almost through my undergrad in
+            Computer Science at Dalhousie University. I program primarily in C# and Python. I like:</br>
+                <ul style="display: block; margin-top: 2%">
+                <li>Making games with Unity</li>
+                <li>Learning about graphics and shaders</li>
+                <li>Making music</li>
+                <li>Roadtrips</li>
+		<li>Mad Max 1, 2, and 3</li>
+                <li>Craft beer</li>
+                <li>Coffee</li>
+                </ul>
+        </div>
+    </div>
+
+
+</div> <!-- /container -->
+{% endblock %}
+
