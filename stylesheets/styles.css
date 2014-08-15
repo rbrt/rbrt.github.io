@@ -760,7 +760,7 @@ dt {
   background: -ms-linear-gradient(#749619, #527f0e);
   background: linear-gradient(#749619, #527f0e);
   background-color: #659e10;
-  
+
   -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
@@ -782,14 +782,14 @@ dt {
 
 section {
   max-width: 650px;
-  padding: 30px 0px 50px 0px;
+  padding: 0px 0px 50px 0px;
   margin: 20px 0;
-  margin-top: 70px;
+  margin-top: 90px;
 }
 section #title {
   border: 0;
   outline: none;
-  margin: 0 0 50px 0;
+  margin: 25px 0 5px 0;
   padding: 0 0 5px 0;
 }
 section #title h1 {
@@ -848,4 +848,36 @@ section #title .credits.right {
   nav {
     display: none;
   }
+}
+
+.thumbnailrow{
+    display: table;
+}
+
+/* Things I made myself */
+.thumbnail{
+    margin: 2px;
+    display: block;
+    float: left;
+    padding: 4px;
+    line-height: 20px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-align:center;
+}
+
+.thumbnail>img{
+    display: block;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
