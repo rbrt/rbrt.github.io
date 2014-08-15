@@ -8,6 +8,11 @@ title: BeyondThunderdo.me
   <h1>BeyondThunderdo.me</h1>
   <p>Code, Music, and Mad Max</p>
   <hr>
+
+  {% for post in site.posts %}
+  	{{ post.title }}
+	{{ post.data }}
+  {% endfor %}
 </div>
 
 </section>

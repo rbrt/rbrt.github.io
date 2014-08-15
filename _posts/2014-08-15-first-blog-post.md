@@ -1,0 +1,17 @@
+---
+layout: post
+title: Getting Started
+---
+
+{{ page.title }}
+=================
+
+Hi there, I'm Rob Butler and this is my site. I work as a Software Engineer at Orpheus Interactive in 
+Halifax, NS. I spend my time there making neat things like core systems, gameplay sequences, graphics, and effects.
+That pretty accurately describes how I spend a lot of my free time, but when I'm not doing that, I'm playing in
+bands in cities around North America, getting immersed in other worlds through movies and TV, or reading Science Fiction.
+Biking around my beautiful city and camping just outside it are also lots of fun, but I'd be lying if I tried to paint
+myself as an outdoorsy type.
+
+I like loud amps, C#, The Road Warrior, Unity, William Gibson, Discharge, burritos, black clothes, bikes, and Starcraft. 
+
