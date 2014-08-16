@@ -2,6 +2,10 @@
 layout: post
 title: Getting Started
 ---
+{{ page.title }}
+----------------
+<h5>{{ page.date | date: "%B %-d %Y" }}</h5>
+
 Hi there, I'm Rob Butler and this is my site. This is mostly just a test post, so here's a little about myself. I like:
 
 + Loud Amps

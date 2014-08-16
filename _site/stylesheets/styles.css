@@ -881,3 +881,8 @@ section #title .credits.right {
     margin-right: auto;
     margin-left: auto;
 }
+
+
+.post>p{
+    text-align : left;
+}
