@@ -8,8 +8,8 @@ title: Building Things
 
 One day into construction and I've got this page in a state I'm happy with. Now I can focus on making
 more things to display here! I had some semblance of a page before that I had built with Python using
-Django and Bootstrap, and was hosting on a droplet with DigitalOcean. Upon decided to move things
-over to Github Pages, I decided to scrap what I had an mostly start again. This page is built with Jekyll
+Django and Bootstrap, with hosting occurring on a droplet with DigitalOcean. Upon decided to move things
+over to Github Pages, I decided to scrap what I had and mostly start again. This page is built with Jekyll
 on top of one of the provided themes. I modified a few things and have written a bit of my own CSS, but the
 rapid development of this page is in no small part due to the scaffolding provided by Github.
 
