@@ -7,14 +7,15 @@ title: BeyondThunderdo.me
 <div id="title">
     <h1>BeyondThunderdo.me</h1>
     <p>Code, Music, and Mad Max</p>
-    <hr>
 </div>
 
+<hr>
 
 {% for post in site.posts limit 8 %}
     <div class="post">
         {{ post.content }}
     </div>
+    
 	<hr>
 {% endfor %}
 
