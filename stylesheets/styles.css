@@ -908,3 +908,21 @@ section #title .credits.right {
     margin-top: 15%;
     align-content: center;
 }
+
+.UnityPlayerTitle {
+
+}
+
+.UnityPlayerDescription {
+    margin-bottom: 2%;
+}
+
+.UnityPlayerControls{
+    font-size: 75%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.UnityPlayerControlsTable{
+
+}

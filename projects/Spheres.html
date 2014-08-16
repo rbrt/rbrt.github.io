@@ -63,7 +63,23 @@ title: Spheres and Swirls
 		-->
 		</script>
     <div class="UnityContent">
-		<p class="header"><span>Unity Web Player | </span>Spheres</p>
+        <div class="UnityPlayerTitle">
+            <h1>Spheres && Swirls</h1>
+        </div>
+
+        <div class="UnityPlayerDescription">
+            <div style="display:table">
+                <div style="float: left; width: 50%">
+                    A fragment shader rotates and distorts the backround image by varying amounts depending on fragment distance
+                    from the origin and the angle between zero on the unit circle and the fragment's position.
+                </div>
+
+                <div style="float: left; width: 50%">
+                    A vertex shader moves the vertices of the spheres along their normals, and a fragment shader outputs colour
+                    as a function of vertex displacement.
+                </div>
+            </div>
+        </div>
 		<div class="contentPlayer">
         <div class="content">
 			<div id="unityPlayer">
@@ -80,5 +96,4 @@ title: Spheres and Swirls
 			</div>
 		</div>
         </div>
-		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
     </div>
