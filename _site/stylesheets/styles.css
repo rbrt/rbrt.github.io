@@ -903,3 +903,8 @@ section #title .credits.right {
 .post>p{
     text-align : left;
 }
+
+.UnityContent{
+    margin-top: 15%;
+    align-content: center;
+}
