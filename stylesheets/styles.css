@@ -926,3 +926,7 @@ section #title .credits.right {
 .UnityPlayerControlsTable{
 
 }
+
+.contentPlayer{
+	margin-left:-50%;
+}
