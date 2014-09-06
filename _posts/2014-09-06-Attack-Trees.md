@@ -17,9 +17,9 @@ well, sucks.
 The system I made is a tree for managing combos and special moves. I wound up implementing
 this as an actual tree of transforms which gets stored as a prefab. Each transform has
 a PlayerAttack component, which holds information like:
-    - Animations
-    - Damage
-    - Effects (knockback, stun, etc)
++ Animations
++ Damage
++ Effects (knockback, stun, etc)
 but more importantly, it has a list of "next moves". Each of these moves is associated with
 a button press and a timing window, and if input that corresponds to any of these next moves
 is fed into the attack tree, then the tree is traversed and that attack is invoked. I also
