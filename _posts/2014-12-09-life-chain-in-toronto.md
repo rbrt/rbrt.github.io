@@ -14,7 +14,7 @@ the world. I saw some people from the West coast that I hadn't seen in 2 or 3 ye
 and that was wonderful. We made and unloaded a bunch of merch, which these dudes
 sold for us:
 
-<img src="/images/MerchBoyz.gif">
+<img src="/images/MerchBoyz.jpg">
 
 Playing was a lot of fun, but even better was the chance to catch some incredible
 sets. <a href="http://institute.bandcamp.com/">Institute</a> from Texas have
@@ -22,7 +22,7 @@ been my favorite band of the year, with the Salt EP being my favorite record of
 the year by far. They did not fail to hold up to expectations live either, it was
 so so so good. The other really killer set of the weekend was DiE from the UK:
 
-<img src="DieInToronto.jpg">
+<img src="/images/DieInToronto.jpg">
 
 They also held up to their recordings, though I caught them in New York in April
 so already knew what to expect. My friend Ben broke his rib during their set,
