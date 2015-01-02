@@ -72,12 +72,54 @@ state machines, which look like this:
 They are gross to look at (and actually, the states are all on top of eachother.
 I spread those out manually for the screenshot) but are basically never used by
 a developer directly; all invokation is done by hash reference through code. I
-has so much fun with this because I got to use reflection (<3) to get at all of
-the underlying functions to construct the state machines. First I had to poke
-around for a bit to see how things work and what was available, and then I started
-on generating state machines. Since we don't need transitions defined (we
-just crossfade) this was pretty straightforward, but fun nonetheless. The tool is
-able to generate a new layer (so as not to interfere with the other states on an
-AnimationController) and also able to update an existing layer when new animations
-are added. It took something that would've been really tedious and error prone,
-and made it into a development step that runs in a few seconds.
+had so much fun with this because I got to use reflection (<3) to get at all of
+the underlying functions to construct the state machines. Apparently there is a
+much more expansive API for Mecanim in Unity 5 which I haven't looked into yet,
+so reflection might not be necessary going forward.
+
+First, I had to poke around for a bit to see how things work and what was available,
+and then I started on generating state machines. Since we don't need transitions
+defined (we just crossfade into animations) this was pretty straightforward, but
+fun nonetheless. The tool is able to generate a new layer (so as not to interfere
+with the other states on an AnimationController) and also able to update an existing
+layer when new animations are added. It took something that would've been really
+tedious and error prone, and made it into a development step that runs in a few
+seconds.
+
+
+<h4>Automatic Creation of Enemy Encounters</h4>
+
+In my spare time I've been working on a 2D beat 'em up which I've written about
+before, still tentatively titled PK. Recently, I've made the notion of an enemy
+encounter. This is an event which is triggered by the player advancing to a certain
+point in the world, which results in spawning different types and amounts of enemies,
+changing the music, playing a visual cue, etc. The encounters themselves are
+implemented as a small hierarchy of GameObjects, with some internal references as
+well as references to controllers and instance objects in the scene. While it is
+fairly straightforward to set up by hand, I decided to automate the process.
+
+I wrote a small editor script which creates and names the required empty GameObjects,
+attaches the required components, and assigns the default references. In this manner
+I can set up a new fight relatively quickly and not get bogged down making sure I've
+done the grunt work properly each time. This took very little time to do, around
+30 minutes, and has saved me a fair bit of time already.
+
+<h5><i>Automation</i></h5>
+<img src="/images/EnemyEncounterCreator1.png">
+<img src="/images/EnemyEncounterCreator2.png">
+<img src="/images/EnemyEncounterCreator3.png">
+
+
+<h4>Lists to Dictionary Inspector</h4>
+
+Another deficiency of Unity is that you can't serialize a dictionary. Because key-value
+pairs are wonderful for all sorts of things, this gets annoying. Aside from losing
+the ability to easily store key-value pairs, Unity also provides no facilities for
+managing a dictionary in the inspector. A quick workaround for the serialization
+problem is to use two lists or arrays to hold the keys and values, and then
+convert them to and from a dictionary at runtime. I wrote a small custom class that
+can be inherited from to make a quick, self-managing pair of lists with dictionary
+conversion methods. This still doesn't provide the key-value representation in the
+inspector though, so I wrote a custom inspector to display the list contents as
+key value pairs. In this manner, I can now create and manage dictionaries in a fashion
+similar to other collections.
