@@ -19,8 +19,8 @@ title: Gridface
 			var config = {
 				width: screen.width / 2.0,
 				height: (screen.width / 2.0) * aspectRatio,
-				params: { enableDebugging:"0" }
-				
+				params: { enableDebugging:"0", class:"unityEmbed"}
+
 			};
 
 			var u = new UnityObject2(config);
@@ -60,6 +60,9 @@ title: Gridface
 					}
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "../webplayers/Face.unity3d");
+
+				$(".unityEmbed").css("display", "inline");
+				$(".unityEmbed").css("margin-left", "-50%");
 			});
 		-->
     </script>
