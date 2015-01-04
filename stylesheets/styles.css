@@ -350,6 +350,7 @@ img {
   /* 1 */
   -ms-interpolation-mode: bicubic;
   /* 2 */
+  max-width:100%;
 }
 
 /*
@@ -768,7 +769,7 @@ dt {
 }
 #header nav li.fork {
   float: left;
-  margin-left: 0px;
+  margin-right: 2%;
 }
 #header nav li.downloads {
   float: right;
@@ -903,6 +904,10 @@ section #title .credits.right {
 
 .post>p{
     text-align : left;
+}
+
+.post>img{
+    max-width:100%;
 }
 
 .UnityContent{
