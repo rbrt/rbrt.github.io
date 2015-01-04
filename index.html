@@ -4,20 +4,34 @@ title: BeyondThunderdo.me
 ---
 <section>
 
-<div id="title">
-    <h1>BeyondThunderdo.me</h1>
-    <p>Code, Music, and Mad Max</p>
-</div>
-
-<hr>
-
-{% for post in site.posts limit 8 %}
-    <div class="post">
-        {{ post.content }}
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>Code, Music, and Mad Max</p>
     </div>
-    
-	<hr>
-{% endfor %}
+
+    <div style="display:table, width: 50%">
+    <hr>
+
+        <div class="personalDescription">
+            <img src="/images/RobertOnBeach.png" title="Thanks, Emma Ross :)">
+            <h3>Robert Butler</h3>
+            Dev at <a href="http://www.orpheusinteractive.com">Orpheus Interactive</a>
+            <a href="https://twitter.com/BoTreats"><img src="Icon.png"></a>
+            <a href="https://github.com/rbrt"><img src="Icon.png"></a>
+            <a href="ca.linkedin.com/pub/robert-butler/ab/ab9/753"><img src="Icon.png"></a>
+            <a href="mailto:robbutler902@gmail.com"><img src="Icon.png"></a>
+        </div>
+    </div>
+
+
+    {% for post in site.posts limit 8 %}
+        <div class="post">
+            {{ post.content }}
+        </div>
+
+    	<hr>
+    {% endfor %}
+</div>
 
 
 </section>
