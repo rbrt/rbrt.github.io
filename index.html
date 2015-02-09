@@ -4,20 +4,37 @@ title: BeyondThunderdo.me
 ---
 <section>
 
-<div id="title">
-    <h1>BeyondThunderdo.me</h1>
-    <p>Code, Music, and Mad Max</p>
-</div>
-
-<hr>
-
-{% for post in site.posts limit 8 %}
-    <div class="post">
-        {{ post.content }}
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>Code, Music, and Mad Max</p>
     </div>
-    
-	<hr>
-{% endfor %}
+
+    <div style="display:table, width: 50%">
+    <hr>
+
+        <div class="personalDescription">
+            <img src="/images/RobertOnBeach.png" title="Thanks, Emma Ross :)">
+            <h3>Robert Butler</h3>
+            Software Engineer<br> 
+            <a href="http://www.orpheusinteractive.com">Orpheus Interactive</a><br>
+            <a href="https://twitter.com/BoTreats"><img src="/images/twitterIcon.png" class="iconLinkImage"></a>
+            <a href="https://github.com/rbrt"><img src="/images/githubIcon.png" class="iconLinkImage"></a>
+            <a href="https://ca.linkedin.com/pub/robert-butler/ab/ab9/753"><img src="/images/linkedinIcon.png" class="iconLinkImage"></a>
+            <a href="mailto:robbutler902@gmail.com"><img src="/images/mailIcon.png" class="iconLinkImage"></a>
+        </div>
+    </div>
+
+
+    {% for post in site.posts limit:5 %}
+        <div class="post">
+            {{ post.content }}
+        </div>
+
+    	<hr>
+    {% endfor %}
+
+    <a href="/archive/"><h1 style="text-align:center; margin-top:5%;">Older Posts</h1></a>
+
 
 
 </section>

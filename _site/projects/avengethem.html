@@ -19,17 +19,20 @@
 
   </head>
   <body>
-      <div id="header">
+    <div id="header">
         <nav>
-          <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
-          <li class="fork"><a href="/projects/">Projects</a></li>
-          <li class="fork"><a href="/music/">Music</a></li>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/projects/">Projects</a></li>
+            <li class="fork"><a href="/music/">Music</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
         </nav>
-      </div><!-- end header -->
+    </div><!-- end header -->
+
+
 
     <div class="wrapper">
 
-      	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+                	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
 	<script type="text/javascript">
 	<!--
 	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
@@ -47,7 +50,7 @@
 		var config = {
 			width: screen.width / 2.0,
 			height: (screen.width / 2.0) * aspectRatio,
-			params: { enableDebugging:"0" }
+			params: { enableDebugging:"0", class:"unityEmbed"}
 
 		};
 		var u = new UnityObject2(config);
@@ -87,37 +90,41 @@
 				}
 			});
             var pathToLoad = "../webplayers/LudumDare29.unity3d";
-            console.log(pathToLoad)
 			u.initPlugin(jQuery("#unityPlayer")[0], pathToLoad);
+
+			$(".unityEmbed").css("display", "inline");
+			$(".unityEmbed").css("margin-left", "-50%");
 		});
 	-->
 	</script>
-
+</head>
+<body>
 <div class="UnityContent">
-	<div class="UnityPlayerTitle">
-		<h1>Avenge Them!</h1>
-	</div>
-
-	<div class="UnityPlayerDescription">
-		Made in a weekend for Ludum Dare 29.
-	</div>
-
-	<hr>
-
-	<div class="UnityPlayerControls">
-		<h3>CONTROLS/OBJECTIVES:</h3>
-
-		<div class="post" style="float: left;">
-			<div style="font-size:125%">
-				Kill the knight who matches the target description. You'll be killed after you make your choice, so be certain!
-			</div>
-			<br>
-			WASD - Movement<br/>
-			Space - Execute<br/>
-		</div>
-	</div>
-
 	<div class="contentPlayer">
+
+		<div class="UnityPlayerTitle">
+			<h1>Avenge Them!</h1>
+		</div>
+
+		<div class="UnityPlayerDescription">
+			Made in a weekend for Ludum Dare 29.
+		</div>
+
+		<hr>
+
+		<div class="UnityPlayerControls">
+			<h3>CONTROLS/OBJECTIVES:</h3>
+
+			<div class="post" style="float: left;">
+				<div style="font-size:125%">
+					Kill the knight who matches the target description. You'll be killed after you make your choice, so be certain!
+				</div>
+				<br>
+				WASD - Movement<br/>
+				Space - Execute<br/>
+			</div>
+		</div>
+
 		<div id="unityPlayer">
 			<div class="missing">
 				<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
@@ -130,19 +137,19 @@
 				</a>
 			</div>
 		</div>
+
 	</div>
 </div>
 
 
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-53820142-1', 'auto');
-  ga('send', 'pageview');
-
-  </script>
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+    </script>
   </body>
 </html>

@@ -1,10 +1,85 @@
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-ga('create', 'UA-53820142-1', 'auto');
-ga('send', 'pageview');
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/projects/">Projects</a></li>
+            <li class="fork"><a href="/music/">Music</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
 
-</script>
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="attack-tree">Attack Tree</h2>
+<h5>September 6 2014</h5>
+
+<p>I’ve put in some more work on PK over the last weeks or so, and have been building
+systems to help with making content instead of making content. This is the first time
+I’ve really put more than a weekend into a side project, and also the first time
+on a side project that I’ve really taken the time to design something that will scale.
+Usually I just want to hack together something that works, and I think that a big
+reason I get discouraged when trying to pick up development again is that my codebase…
+well, sucks.</p>
+
+<p>The system I made is a tree for managing combos and special moves. I wound up implementing
+this as an actual tree of transforms which gets stored as a prefab. Each transform has
+a PlayerAttack component, which holds information like:</p>
+
+<ul>
+  <li>Animations</li>
+  <li>Damage</li>
+  <li>Effects (knockback, stun, etc)</li>
+</ul>
+
+<p>More importantly, it has a list of “next moves”. Each of these moves is associated with
+a button press and a timing window, and if input that corresponds to any of these next moves
+is fed into the attack tree, then the tree is traversed and that attack is invoked. I also
+wound up building some editor tools to help modify and copy the attack tree and to make new
+segments. The workflow is straight forward, and once the animations and script for an attack
+exist, it’s pretty quick for me to add it to the tree.</p>
+
+<p>This has been pretty fun because I really like making tools and systems, and I have something
+that, despite being simple, feels good and like something I want to iterate on and extend. The
+downside to spending time on these aspects though is that content-wise, I don’t have much to
+show. My plan for the next short while is to spend some time trying to make a short level and
+seeing if I have something fun on my hands. If it feels like there’s something there, then
+it’s time to start adding background assets and new enemies, then get back to systems and moves.</p>
+
+<p>In closing, here is a jab-jab-cross combo in action:
+<img src="/images/throw.gif" /></p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>

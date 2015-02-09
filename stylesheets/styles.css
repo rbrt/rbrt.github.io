@@ -350,6 +350,7 @@ img {
   /* 1 */
   -ms-interpolation-mode: bicubic;
   /* 2 */
+  max-width:100%;
 }
 
 /*
@@ -712,8 +713,8 @@ dt {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 10px;
-  background: blue;
   margin: 6px auto;
+  text-align: center;
 }
 #header nav li {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -767,8 +768,7 @@ dt {
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
 }
 #header nav li.fork {
-  float: left;
-  margin-left: 0px;
+  display: inline-block;
 }
 #header nav li.downloads {
   float: right;
@@ -887,6 +887,7 @@ section #title .credits.right {
     background: #1B1B1B;
     padding: 2%;
     border: 1px solid #434343;
+    width: inherit;
     margin-bottom: 3%;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -902,6 +903,10 @@ section #title .credits.right {
 
 .post>p{
     text-align : left;
+}
+
+.post>img{
+    max-width:100%;
 }
 
 .UnityContent{
@@ -923,9 +928,62 @@ section #title .credits.right {
     margin-bottom: 2%;
 }
 
-.UnityPlayerControlsTable{
-
+.personalDescription{
+    display: block;
+    float: left;
+    width: 27%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    border: 4px solid #434343;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
-#unityPlayer{
+.personalDescription>img{
+    display: block;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.personalDescription>h3{
+    margin-bottom: 1%;
+}
+
+.iconLinkImage{
+    max-width: 15%;
+    max-height: 15%;
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 3%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
