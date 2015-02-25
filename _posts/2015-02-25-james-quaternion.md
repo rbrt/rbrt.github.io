@@ -6,9 +6,7 @@ title: James Quaternion
 ----------------
 <h5>{{ page.date | date: "%B %-d %Y" }}</h5>
 
-For the last week and a half I've been working on something tentatively titled
-
-<h3> James Quaternion </h3>
+For the last week and a half I've been working on something tentatively titled <i>James Quaternion</i>.
 
 <img src="/images/JamesQuaternionFlightDemo.gif">
 
@@ -42,7 +40,7 @@ and use Transform.LookAt to move towards their target, but the effect works well
 enough.
 
 <h5><i>Charge shots and seeker missiles</i></h5>
-<img src="/images/JamesQuaternionLaserMissileDemo.png">
+<img src="/images/JamesQuaternionLaserMissileDemo.gif">
 
 I implemented a shield by wrapping the fighter in a low poly sphere and modified
 Unity's transparent shader to produce three ripples based on two offset values.
@@ -57,7 +55,7 @@ This is a bummer because the gradual altering of each element of the array looke
 lot better than affecting the material all at once. Ah well.
 
 <h5><i>Shield and boost</i></h5>
-<img src="/images/JamesQuaternionLaserShieldDemo.png">
+<img src="/images/JamesQuaternionLaserShieldDemo.gif">
 
 Over the weekend, I implemented water as well which was a lot of fun. I decided
 to do it using Gerstner waves from this
@@ -106,15 +104,3 @@ and it's especially jarring at the back of the trail, but at present it looks li
 <img src="/images/JamesQuaternionWaveDisplacement.gif">
 
 Anyway, more to come.... at some point!
-
-
-
-
-
-
-
-
-
-
-
-a
