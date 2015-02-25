@@ -50,7 +50,7 @@ I don't cull the front or back faces, so that you can see the shield ripples all
 I also implemented a boost which is pretty straightforward, but I made the boost fire in
 Blender and have the engine trails changing colour. I was trying to find a way to
 modify Unity's TrailRenderer Colour array, but it doesn't seem to be possible without
-editor scripting. (The only way I could get this to work was with the PGJ's <a href="http://forum.unity3d.com/threads/trail-renderer-colors-c.54162/">post</a>)
+editor scripting. (The only way I could get this to work was with the method in PGJ's <a href="http://forum.unity3d.com/threads/trail-renderer-colors-c.54162/">post</a>)
 This is a bummer because the gradual altering of each element of the array looked a
 lot better than affecting the material all at once. Ah well.
 
@@ -79,17 +79,20 @@ generated plane, which looks like this:
 <h5><i>Oooo, water...</i></h5>
 <img src="/images/JamesQuaternionWaterDemo.gif">
 
-Which admittedly is probably pretty simple and could be accomplished with a much less
+That is pretty simple and could be accomplished with a much less
 involved shader, but whatever, this was fun to write. I really want to be recomputing
 face normals on the fly so that the colours change, but I don't know of any way to do this
 without using geometry shaders, which I can't do in Unity on OSX with an integrated
 graphics chip. My assumption here is that I would be able to get information about the
 current triangle in the geometry shader, as opposed to trying to figure that out in
 a vertex shader which has no knowledge of the other vertices. I might write this on
-a windows box or my iMac at work just to see how it looks. Also, if you crank up the
-poly count and parameter values, then you get some big rolling waves:
+a windows box or my on iMac at work just to see how it looks. It's been suggested that
+I could pass in the total size of the mesh and vertex count, and then use information about
+the vertex in world space to figure out information about each triangle. I may give
+this a shot in the near future. Also, if you crank up the poly count and parameter values,
+then you get some big rolling waves:
 
-<h5><i>Big old waves</i></h5>
+<h5><i>Big ol' waves</i></h5>
 <img src="/images/JamesQuaternionBigWaves.gif">
 
 I've also been working on an effect to distort the area underneath the player. It
