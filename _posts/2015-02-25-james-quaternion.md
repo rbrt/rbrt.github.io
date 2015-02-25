@@ -55,7 +55,7 @@ This is a bummer because the gradual altering of each element of the array looke
 lot better than affecting the material all at once. Ah well.
 
 <h5><i>Shield and boost</i></h5>
-<img src="/images/JamesQuaternionLaserShieldDemo.gif">
+<img src="/images/JamesQuaternionShieldDemo.gif">
 
 Over the weekend, I implemented water as well which was a lot of fun. I decided
 to do it using Gerstner waves from this
