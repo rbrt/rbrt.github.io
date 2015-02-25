@@ -28,8 +28,8 @@ from having so many materials in a scene.
 <h5><i>The player's fighter</i></h5>
 <img src="/images/JamesQuaternionFighter.png">
 
-<h5><i>An enemy blimp</i></h5>
-<img src="/images/JamesQuaternionBlimp.png">
+<h5><i>An enemy blomp</i></h5>
+<img src="/images/JamesQuaternionBlomp.png">
 
 So far, aside from flying around, you can shoot lasers (both charge shots and
 regular shots) and launch seeker missiles. I implemented the laser charge by using
