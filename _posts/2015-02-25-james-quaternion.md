@@ -61,7 +61,7 @@ Over the weekend, I implemented water as well which was a lot of fun. I decided
 to do it using Gerstner waves from this
 <a href="http://graphics.ucsd.edu/courses/rendering/2005/jdewall/tessendorf.pdf">paper's</a>
 section on "Practical Ocean Wave Algorithms". The equation for generating waves involves
-summing a series of waves with a few parameters that allow you affect frequency, amplitude,
+summing a series of waves with a few parameters that allow you to affect frequency, amplitude,
 direction, and (cool but not used in my case) curl of the wave. A single wave looks
 like this:
 
@@ -86,7 +86,7 @@ without using geometry shaders, which I can't do in Unity on OSX with an integra
 graphics chip. My assumption here is that I would be able to get information about the
 current triangle in the geometry shader, as opposed to trying to figure that out in
 a vertex shader which has no knowledge of the other vertices. I might write this on
-a windows box or my on iMac at work just to see how it looks. It's been suggested that
+a windows box or on my iMac at work just to see how it looks. It's been suggested that
 I could pass in the total size of the mesh and vertex count, and then use information about
 the vertex in world space to figure out information about each triangle. I may give
 this a shot in the near future. Also, if you crank up the poly count and parameter values,
