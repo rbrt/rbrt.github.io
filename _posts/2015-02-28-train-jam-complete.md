@@ -6,7 +6,9 @@ title: Train Jam Complete
 ----------------
 <h5>{{ page.date | date: "%B %-d %Y" }}</h5>
 
-We did it:
+We got discouraged a few times, we're way tired and pretty out of it, but we did it.
+We barely went outside for three days, travelled through several states, and slept
+in reclining chairs in a speeding tin can.... and made this:
 
 <h5><i>Infiniclub</i></h5>
 <img src="/images/Infiniclub.gif">

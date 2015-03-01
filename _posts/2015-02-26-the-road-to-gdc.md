@@ -28,7 +28,7 @@ I can connect to Allan's machine over the network via ssh, and we're able to use
 usual workflow. Some other devs are sharing a git repo on a USB drive and pushing
 pulling to/from that. Constraints force you to get creative.
 
-<h5><i>Pictured here: Allan</i></h5>
+<h5><i>Git over adhoc network</i></h5>
 <img src="/images/TrainJamWorkflow.png">
 
 This year Train Jam is seemingly a big deal. There is a booth at GDC where the games
