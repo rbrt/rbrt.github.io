@@ -57,6 +57,103 @@
 
     
         <div class="post">
+            <h2 id="train-jam-complete">Train Jam Complete</h2>
+<h5>February 28 2015</h5>
+
+<p>We did it:</p>
+
+<h5><i>Infiniclub</i></h5>
+<p><img src="/images/Infiniclub.gif" /></p>
+
+<p><a href="http://twitter.com/allanlavell">Allan</a> and I, despite being really sick
+and sleeping terribly for the duration of the jam (although I guess that describes
+anyone who wasn;t in a sleeper car) managed to push out a pretty ridiculous game.
+We called it Infiniclub, and the pitch is basically that it’s Crypt of the Necrodancer
+meets Flappy Bird. We wound up with a playable prototype with standin music and
+some very broken mechanics.</p>
+
+<p>I managed to put my recent Blonder skills to good use, making a bunch of dancing
+characters and some additional art assets. Everyone was animated in Unity, as I
+still haven’t ventured into rigging and animating anything in animation software.
+We targeted the iPhone, and have a working build on each of our phones where you
+swipe in the direction you want to move, but we also put keyboard controls in place
+because swiping with a mouse is a huge pain for testing.</p>
+
+<p>The look of the game came together towards the end of the weekend, but was actually
+really straightforward. I put a single rotating directional light with a moderate
+intensity and white colour in the scene, and then gave essentially everything in the
+game a specular material. I tried to pick base colours and specular colours that would
+blend nicely together, and even when it didn’t work the effect was still cool. What
+using the specular material bought us was the effect where everything changes colour
+in a strobing motion at the same time. It also adds a great deal of variety to the
+colour palette in the scene at any given time.</p>
+
+<p>We also put in a pooling system, and used it to define several different types of
+object pools. This lets the game go on forever without needing to instantiate a
+whole bunch of new GameObjects (expensive!) and keeps things running smoothly. We also
+managed to include (per device) persistent high scores which display on the main screen,
+and a system of multipliers and gaining points through collectable items during gameplay.</p>
+
+<p>The big glaring thing we weren’t able to get tight was actually enforcing that the player
+be interacting with the game to the rhythm of the song. Towards the end of the jam,
+we came to the conclusion that Unity’s audio timer (AudioSettings.dspTime) diverges slightly
+from it’s in game timer. We tried to rig up some last minute solutions to compensate for
+this (literally, in the last 20 minutes) but were unable to get it down perfect. So for Train Jam,
+the player can just tap whenever they please and only needs to worry about maintaining
+their multiplier.</p>
+
+<p>Some other notable games included a twin stick jouster where you attack by spinning the
+sticks in motion together, a two player game of chicken with a train where the train is
+totally random and provides no warning, a 4 player kart racer where each player uses
+half of a controller to play, and a racing game where the track is revealed only as players
+die by flying off of it. It was a really cool experience, an interesting way to travel,
+and definitely worth doing. Now we’re all in SF getting ready for GDC tomorrow, staying
+at the Mason St Hostel with what seems like everyone else from the train. Here we go.</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
+            <h2 id="the-road-to-gdc">The Road To GDC</h2>
+<h5>February 26 2015</h5>
+
+<p>I’m on a train right now somewhere in Idaho, taking part in my first Train Jam.
+Train Jam is this thing where a bunch of devs and artists get on a train in Chicago,
+and then ride it to San Francisco. During the trip, a theme is announced and we all
+make games. I’m working with <a href="http://www.twitter.com/allanlavell">@allanlavell</a>
+on an iPhone game that we haven’t titled yet.</p>
+
+<h5><i>Pictured here: Allan</i></h5>
+<p><img src="/images/TrainJamGettingStarted.JPG" /></p>
+
+<p>We’re looking to take the gameplay of something like Frogger (or as a more recent
+and direct influence, Crossy Road), and merge it with rhythm based gameplay, ala
+Crypt Of The Necrodancer. So far we’re prototyped a few mechanics, thrown a few
+things out, and have a decent skeleton for moving forward. We should have something
+playable by the end of the night, and then we’ll be left with the remaining ~2 days
+to polish polish polish.</p>
+
+<p>We don’t have much internet access, so we’re working without much help. Fortunately,
+we’ve got all our tools on hand, and we set up an adhoc network to run a git server.
+I can connect to Allan’s machine over the network via ssh, and we’re able to use our
+usual workflow. Some other devs are sharing a git repo on a USB drive and pushing
+pulling to/from that. Constraints force you to get creative.</p>
+
+<h5><i>Pictured here: Allan</i></h5>
+<p><img src="/images/TrainJamWorkflow.png" /></p>
+
+<p>This year Train Jam is seemingly a big deal. There is a booth at GDC where the games
+are going to be playable, and some gaming media is going to be giving it some
+coverage. There are also a bunch of sponsors, and as a result, all of the snacks
+on the train are free. I can’t get over this. I was kind of sleep deprived before
+we even got started, I’m probably going to be in brutal shape when we get to SF.</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="james-quaternion">James Quaternion</h2>
 <h5>February 25 2015</h5>
 
@@ -305,63 +402,6 @@ that rhyme”):</p>
 
 <p>I need to stop making things with Unity 5 so that I can actually post playable
 builds…</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="catastrophe-jam">Catastrophe Jam</h2>
-<h5>December 12 2014</h5>
-
-<p>The first (and only?) annual Catastrophe Jam is finishing up at Volta tonight.
-The rough premise is that you have three hours to make a game, but beyond that,
-there aren’t really any rules. There would up being about 30 or 40 people taking
-part, which was awesome. We saw a bunch of different submissions which varied
-substantially in how far complete they were.</p>
-
-<p>I made Babby’s Quest. A third-person action adventure game. Here are two gifs
-from it:</p>
-
-<p><img src="/images/BabbysQuest1.gif" /></p>
-
-<p><img src="/images/BabbysQuest2.gif" /></p>
-
-<p>It was a ridiculous night.</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="getting-artsy">Getting Artsy</h2>
-<h5>December 10 2014</h5>
-
-<p>I’ve been messing around with Blender lately and it’s been hilarious. I decided
-that neglecting to have any 3D ability is probably a bad idea, and that it can’t
-be that hard to learn. Where I like the idea of things looking really goofy, it
-seems that making basic, silly 3D monstrosities should be a fun exercise. So,
-without much concern so far for things like UV mapping or worrying about poly
-count, I set out to make some stuff.</p>
-
-<p>The first one is… Chuds Bandbox. I can’t
-really explain this much more than writing out the title. Who or what is chud?
-What is a bandbox? Why did I make this? I don’t know, but me and @mrdanielbrauer
-are 100% responsible for it:</p>
-
-<p><img src="/images/ChudsBandbox.gif" /></p>
-
-<p>The next thing I made was a dude made out of stretched and extruded primitives
-for the Halifax Game Collective’s Cool Kidz jam. I didn’t really complete a game,
-but I did make this dude. I made the sunglasses from scratch; definitely a proud
-moment…? The only document I have of this on hand is a saved snapchat converted
-to a gif, so here it is:</p>
-
-<p><img src="/images/CoolKidzSnapchat.gif" /></p>
-
-<p>I want to play around more with Blender and learn about some intermediate concepts,
-as well as maybe make things that aren’t just slightly altered primitive shapes,
-but it has still been a blast to mess around with.</p>
 
         </div>
 
