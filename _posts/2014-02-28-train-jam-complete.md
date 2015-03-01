@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Train Jam: Complete
+title: Train Jam Complete
 ---
 {{ page.title }}
 ----------------
