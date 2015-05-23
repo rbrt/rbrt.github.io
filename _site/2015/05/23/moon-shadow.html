@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/projects/">Projects</a></li>
+            <li class="fork"><a href="/music/">Music</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="moon-shadow">Moon Shadow</h2>
+<h5>May 23 2015</h5>
+
+<p>My friend (<a href="https://twitter.com/macbooktall">Connor Bell</a>) has been
+working on a really cool iOS app lately called Moon Shadow. Following along in a
+pretty logical manner from his last project <a href="http://www.glitchwizard.com/">Glitch Wizard</a>,
+Moon Shadow lets you apply a whole bunch of glitch effects to video in realtime.
+You can also take still images, and the results can look something like this:</p>
+
+<p><img src="/images/moonshadow1.JPG" /></p>
+
+<p>What’s been really rad about it though is that he’s asked a bunch of friends from
+in and out of Halifax to write shaders for it. The results have already been awesome
+and it’s going to be incredibly fun to play around with once he releases it to the public.
+I’ve been getting Test Flight builds and having a bunch of fun with them. Anyhow, I
+wrote two shaders for it that I’m pretty into, although the second one is a bit
+too chaotic. The source (and examples) for them are up on my ShaderToy account.
+Actually, they’re all that’s on my ShaderToy account.</p>
+
+<p>The first one I wrote is this goofy thing that makes the screen collapse in on itself:</p>
+
+<h5><i><a href="https://www.shadertoy.com/view/Mt23zG">Source</a></i></h5>
+<p><img src="/images/moonshadow3.gif" /></p>
+
+<p>It works by converting all the points in UV space (0-1) to values between -1 and 1.
+From there I just find the direction vector from the current pixel to (0,0) and move
+the points along that line, repeating when they “pass” the center or fall off the
+edge of the screen.</p>
+
+<p>The really noisy one I wrote is this spirally dealie:</p>
+
+<h5><i><a href="https://www.shadertoy.com/view/Ml2GzG">Source</a></i></h5>
+<p><img src="/images/moonshadow2.gif" /></p>
+
+<p>To be honest I’m not totally sure what’s up here, I got it working through a bunch
+of trial and error. Roughly though, what’s going on is a conversion from UV space to
+values between -1 and 1. From there I find the angle between the line formed by
+the current point and (0,0), and the line from (0,0) to (1,0). I also get the
+magnitude of the vector of the current point. I use the magnitude of the vector along
+with the sine function to distort the current point along the line formed from the
+center of the screen to the current point. This results in several wavy patterns radiating
+from the center. So maybe I do kind of know what’s going on? Cool.</p>
+
+<p>Anyway Moon Shadow is sick and it was really fun to have an excuse to write wonky shaders
+beyond just making something silly to look at. It’s been sick to see what other people
+have been doing with them, and I’ve had a blast playing around with different combinations
+of shaders that everyone wrote.</p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>

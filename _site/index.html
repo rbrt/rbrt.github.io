@@ -57,6 +57,113 @@
 
     
         <div class="post">
+            <h2 id="moon-shadow">Moon Shadow</h2>
+<h5>May 23 2015</h5>
+
+<p>My friend (<a href="https://twitter.com/macbooktall">Connor Bell</a>) has been
+working on a really cool iOS app lately called Moon Shadow. Following along in a
+pretty logical manner from his last project <a href="http://www.glitchwizard.com/">Glitch Wizard</a>,
+Moon Shadow lets you apply a whole bunch of glitch effects to video in realtime.
+You can also take still images, and the results can look something like this:</p>
+
+<p><img src="/images/moonshadow1.JPG" /></p>
+
+<p>What’s been really rad about it though is that he’s asked a bunch of friends from
+in and out of Halifax to write shaders for it. The results have already been awesome
+and it’s going to be incredibly fun to play around with once he releases it to the public.
+I’ve been getting Test Flight builds and having a bunch of fun with them. Anyhow, I
+wrote two shaders for it that I’m pretty into, although the second one is a bit
+too chaotic. The source (and examples) for them are up on my ShaderToy account.
+Actually, they’re all that’s on my ShaderToy account.</p>
+
+<p>The first one I wrote is this goofy thing that makes the screen collapse in on itself:</p>
+
+<h5><i><a href="https://www.shadertoy.com/view/Mt23zG">Source</a></i></h5>
+<p><img src="/images/moonshadow3.gif" /></p>
+
+<p>It works by converting all the points in UV space (0-1) to values between -1 and 1.
+From there I just find the direction vector from the current pixel to (0,0) and move
+the points along that line, repeating when they “pass” the center or fall off the
+edge of the screen.</p>
+
+<p>The really noisy one I wrote is this spirally dealie:</p>
+
+<h5><i><a href="https://www.shadertoy.com/view/Ml2GzG">Source</a></i></h5>
+<p><img src="/images/moonshadow2.gif" /></p>
+
+<p>To be honest I’m not totally sure what’s up here, I got it working through a bunch
+of trial and error. Roughly though, what’s going on is a conversion from UV space to
+values between -1 and 1. From there I find the angle between the line formed by
+the current point and (0,0), and the line from (0,0) to (1,0). I also get the
+magnitude of the vector of the current point. I use the magnitude of the vector along
+with the sine function to distort the current point along the line formed from the
+center of the screen to the current point. This results in several wavy patterns radiating
+from the center. So maybe I do kind of know what’s going on? Cool.</p>
+
+<p>Anyway Moon Shadow is sick and it was really fun to have an excuse to write wonky shaders
+beyond just making something silly to look at. It’s been sick to see what other people
+have been doing with them, and I’ve had a blast playing around with different combinations
+of shaders that everyone wrote.</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
+            <h2 id="the-last-few-months">The Last Few Months</h2>
+<h5>May 15 2015</h5>
+
+<p>I’m terrible at updating this blog. A fair bit has happened since the last time I
+wrote an entry. All of GDC for starters. I was actually disappointed with it
+compared to Unite. I found that a lot of the talks were really lacking, and some
+felt unfinished. There were definitely some worthwhile talks (One on the history
+of sidescrolling camera techniques comes to mind) but they were sparse. I could’ve
+made do with only an Independent Games Summit Pass instead of the All Access. Without
+that though, I wouldn’t have been able to get…. free coffee.</p>
+
+<p><img src="/images/unity-booth.JPG" /></p>
+
+<p>The show floor was cool. I got to play some rad games (Thumper!!) and see lots of
+stuff. The sheer spectacle was pretty impressive, and it was neat to see the kind
+of thing that, previously, I had just seen in gaming magazines as a kid. I had a few
+biz meetings that were alright and got to ask some questions about Unity 5. Some of
+the features just aren’t that appealing, but I’m not the target audience.</p>
+
+<p>I met a lot of people, went to some really cool parties, found out the dangers of
+the open bar, and got to dodge some of the worst winter in a 100 years in Nova Scotia.
+it was a good week. Immediately following GDC, I took the subway over to Oakland
+and then went on tour with Life Chain for 2 weeks. We started off playing a fest
+in Oakland and then went up and down the West Coast.</p>
+
+<p><img src="/images/manic-relapse.JPG" /></p>
+
+<p>We were going to go as far north as Vancouver, but had some border issues and didn’t
+wind up going into Canada. It turns out that the Canadian border can (and will) force
+you to give them your phone’s password and then they go through everything. All your
+photos, emails, facebook messages, texts, etc. It’s an invasive process that leaves you
+feeling pretty violated. That happened and it was a total bummer.</p>
+
+<p>A few weeks after getting back, I made a shift in my working environment and headed
+over to Silverback Games as their Lead Developer. They got me set up with some
+sweet gear and put me to work on an upcoming iOS game.</p>
+
+<p><img src="/images/office-setup.JPG" /></p>
+
+<p>I’ve been there for about a month and a half now and I’ve managed to:</p>
+
+<pre><code>- Cut memory usage on device in half
+- Implement an asynchronous loading pipeline which removed a 10 second load after every level
+- Reduce the overworld's scene size by ~60% with a few tricks to remove serialized data
+- Decompose some pretty heavily tangled code into discrete components
+</code></pre>
+
+<p>Working here is a lot of fun and the team is small, but rock solid. I’m excited to see where we go!</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="train-jam-complete">Train Jam Complete</h2>
 <h5>February 28 2015</h5>
 
@@ -256,150 +363,6 @@ and it’s especially jarring at the back of the trail, but at present it looks 
 <p><img src="/images/JamesQuaternionWaveDisplacement.gif" /></p>
 
 <p>Anyway, more to come…. at some point!</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="fun-with-tool-development">Fun With Tool Development</h2>
-<h5>December 31 2014</h5>
-
-<p>I really like making tools. The most experience I have with this is in the context
-of editor scripting in Unity, but it’s something I’ve been doing whenever it makes
-sense. I’ve found that I really enjoy tool development because it’s wonderful to
-click a button or run a command and have a tedious process completed quickly and
-automatically. But since developing tools for production, I’ve also found another
-aspect which I really enjoy: the quick feedback loop.</p>
-
-<p>In my situation, the tools are put into use almost instantly, because they’re
-usually developed to solve a problem currently facing the team. Sometimes, the
-tools are put into use before they’re even really completed. This leads to a
-process where I’m getting feedback on what is and isn’t useful, and what would be
-better right away. To contrast this with the other development I do at work, aside
-from limited playtesting, we have had no outside eyes on our game, and thus no
-feedback. I find it immensely satisfying to know that people are using things I’ve
-created, and with tool development, that occurs quickly and often.</p>
-
-<p>Here are some tools I’ve made over the last year that have been fun to implement:</p>
-
-<h4>Automatic Navmesh Generation</h4>
-
-<p>We have a large, streaming world comprised of many scenes. (I want to take a moment to plug
-<a href="http://www.sectr.co/">SECTR</a> which has helped out a lot!) Unity has a limitation
-(which looks to be addressed in the upcoming Unity 5) that prevents us from streaming
-in navmeshes, so the solution is to have one large navmesh. Importing all the relevant
-geometry is time consuming, annoying, and frequently causes the poor 32-bit application
-to crash. To solve this, I wrote a tool which gradually imports each scene and deletes
-everything which will not be included in the navmesh (see: not marked navmesh static).
-At every stage of the process, the temporary scene is saved and the import progress is
-stored in a scriptable object. This allows us to resume from where we left off in the
-event of a crash. Once all of the scene contents have been imported,then the
-giant navmesh is baked.</p>
-
-<h5><i>Selecting what to include in Navmesh</i></h5>
-<p><img src="/images/AutomateNavmeshMenu.png" /></p>
-
-<h5><i>End result</i></h5>
-<p><img src="/images/BakedNavmesh.png" /></p>
-
-<p>Before having this tool, one of our devs would have to be tied up for the duration of
-each import, as well as the final bake. Each manual import of each scene was
-essentially a roll of the dice, as it was very likely that Unity would crash (and
-more so with each successive scene) especially considering that all GameObjects were
-kept around. Deleting all of the non-essential objects helped out considerably.</p>
-
-<p>The only parts of this process that are not automatic are clicking the buttons to
-invoke the import and bake, and then reverting all changes (except the new navmesh)
-in mercurial. Reverting changes in source control is somewhat heavy handed, but it’s
-quick, foolproof, and allows us to do the very destructive operation of deleting
-all non-essential objects safely.</p>
-
-<h4>Automatic Creation and Updating of Mecanim Animation State Machines</h4>
-
-<p>We have a great deal of assets whose names are just hashes, and these need to be
-associated with animations. We had hoped that we could do something at runtime
-using override controllers, but found that in order to play things smoothly, on
-demand, and without crashing, we needed to have the relevant animations already
-set up in a state machine. To this end, I created a tool to build these large
-state machines, which look like this:</p>
-
-<h5><i>I tweeted this on the day of writing the tool</i></h5>
-<p><img src="/images/AnimationStateMachineTweet.png" /></p>
-
-<p>They are gross to look at (and actually, the states are all on top of eachother.
-I spread those out manually for the screenshot) but are basically never used by
-a developer directly; all invokation is done by hash reference through code. I
-had so much fun with this because I got to use reflection (&lt;3) to get at all of
-the underlying functions to construct the state machines. Apparently there is a
-much more expansive API for Mecanim in Unity 5 which I haven’t looked into yet,
-so reflection might not be necessary going forward.</p>
-
-<p>First, I had to poke around for a bit to see how things work and what was available,
-and then I started on generating state machines. Since we don’t need transitions
-defined (we just crossfade into animations) this was pretty straightforward, but
-fun nonetheless. The tool is able to generate a new layer (so as not to interfere
-with the other states on an AnimationController) and also able to update an existing
-layer when new animations are added. It took something that would’ve been really
-tedious and error prone, and made it into a development step that runs in a few
-seconds.</p>
-
-<h4>Automatic Creation of Enemy Encounters</h4>
-
-<p>In my spare time I’ve been working on a 2D beat ‘em up which I’ve written about
-before, still tentatively titled PK. Recently, I’ve made the notion of an enemy
-encounter. This is an event which is triggered by the player advancing to a certain
-point in the world, which results in spawning different types and amounts of enemies,
-changing the music, playing a visual cue, etc. The encounters themselves are
-implemented as a small hierarchy of GameObjects, with some internal references as
-well as references to controllers and instance objects in the scene. While it is
-fairly straightforward to set up by hand, I decided to automate the process.</p>
-
-<p>I wrote a small editor script which creates and names the required empty GameObjects,
-attaches the required components, and assigns the default references. In this manner
-I can set up a new fight relatively quickly and not get bogged down making sure I’ve
-done the grunt work properly each time. This took very little time to do, around
-30 minutes, and has saved me a fair bit of time already.</p>
-
-<h5><i>Automation</i></h5>
-<p><img src="/images/EnemyEncounterCreator1.png" />
-<img src="/images/EnemyEncounterCreator2.png" />
-<img src="/images/EnemyEncounterCreator3.png" /></p>
-
-<h4>Lists to Dictionary Inspector</h4>
-
-<p>Another deficiency of Unity is that you can’t serialize a dictionary. Because key-value
-pairs are wonderful for all sorts of things, this gets annoying. Aside from losing
-the ability to easily store key-value pairs, Unity also provides no facilities for
-managing a dictionary in the inspector. A quick workaround for the serialization
-problem is to use two lists or arrays to hold the keys and values, and then
-convert them to and from a dictionary at runtime. I wrote a small custom class that
-can be inherited from to make a quick, self-managing pair of lists with dictionary
-conversion methods. This still doesn’t provide the key-value representation in the
-inspector though, so I wrote a custom inspector to display the list contents as
-key value pairs. In this manner, I can now create and manage dictionaries in a fashion
-similar to other collections.</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="orpheus-game-jam">Orpheus Game Jam</h2>
-<h5>December 15 2014</h5>
-
-<p>Today at the office we had an in house game jam for a day. The team produced
-about 10 games in total, many of which were Christmas themed. It was a blast to
-take the day and just make something on the office machines. It was also really
-cool to see what everyone had come up with at the end of the day. I worked alone
-and decided to continue getting mileage out of the rigged baby model I bought
-for Catastrophe Jam. The result was Rabies Babies (jam theme was “two words
-that rhyme”):</p>
-
-<p><img src="/images/RabiesBabies.gif" /></p>
-
-<p>I need to stop making things with Unity 5 so that I can actually post playable
-builds…</p>
 
         </div>
 
