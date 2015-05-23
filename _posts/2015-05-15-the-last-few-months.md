@@ -23,7 +23,7 @@ biz meetings that were alright and got to ask some questions about Unity 5. Some
 the features just aren't that appealing, but I'm not the target audience.
 
 I met a lot of people, went to some really cool parties, found out the dangers of
-the open bar, and got to dodge some of the worst winter in a 100 years in Nova Scotia.
+the open bar, and got to dodge some of the worst winter in a hundred years in Nova Scotia.
 it was a good week. Immediately following GDC, I took the subway over to Oakland
 and then went on tour with Life Chain for 2 weeks. We started off playing a fest
 in Oakland and then went up and down the West Coast.
@@ -43,8 +43,10 @@ sweet gear and put me to work on an upcoming iOS game.
 <img src="/images/office-setup.JPG">
 
 I've been there for about a month and a half now and I've managed to:
+
     - Cut memory usage on device in half
     - Implement an asynchronous loading pipeline which removed a 10 second load after every level
     - Reduce the overworld's scene size by ~60% with a few tricks to remove serialized data
     - Decompose some pretty heavily tangled code into discrete components
+
 Working here is a lot of fun and the team is small, but rock solid. I'm excited to see where we go!

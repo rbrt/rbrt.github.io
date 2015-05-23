@@ -8,9 +8,10 @@ title: Moon Shadow
 
 My friend (<a href="https://twitter.com/macbooktall">Connor Bell</a>) has been
 working on a really cool iOS app lately called Moon Shadow. Following along in a
-pretty logical manner from his last project <a href="http://www.glitchwizard.com/">Glitch Wizard</a>,
-Moon Shadow lets you apply a whole bunch of glitch effects to video in realtime.
-You can also take still images, and the results can look something like this:
+pretty logical manner from his last project (<a href="http://www.glitchwizard.com/">Glitch Wizard</a>
+with Allan Lavell), Moon Shadow lets you apply a whole bunch of glitch effects
+to video in realtime. You can also take still images, and the results can look
+something like this:
 
 <img src="/images/moonshadow1.JPG">
 
