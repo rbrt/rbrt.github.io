@@ -57,313 +57,65 @@
 
     
         <div class="post">
-            <h2 id="moon-shadow">Moon Shadow</h2>
-<h5>May 23 2015</h5>
+            <h2 id="a-day-at-the-beach">A Day At The Beach</h2>
+<h5>February 6 2016</h5>
 
-<p>My friend (<a href="https://twitter.com/macbooktall">Connor Bell</a>) has been
-working on a really cool iOS app lately called Moon Shadow. Following along in a
-pretty logical manner from his last project (<a href="http://www.glitchwizard.com/">Glitch Wizard</a>
-with Allan Lavell), Moon Shadow lets you apply a whole bunch of glitch effects
-to video in realtime. You can also take still images, and the results can look
-something like this:</p>
-
-<p><img src="/images/moonshadow1.JPG" /></p>
-
-<p>What’s been really rad about it though is that he’s asked a bunch of friends from
-in and out of Halifax to write shaders for it. The results have already been awesome
-and it’s going to be incredibly fun to play around with once he releases it to the public.
-I’ve been getting Test Flight builds and having a bunch of fun with them. Anyhow, I
-wrote two shaders for it that I’m pretty into, although the second one is a bit
-too chaotic. The source (and examples) for them are up on my ShaderToy account.
-Actually, they’re all that’s on my ShaderToy account.</p>
-
-<p>The first one I wrote is this goofy thing that makes the screen collapse in on itself:</p>
-
-<h5><i><a href="https://www.shadertoy.com/view/Mt23zG">Source</a></i></h5>
-<p><img src="/images/moonshadow3.gif" /></p>
-
-<p>It works by converting all the points in UV space (0-1) to values between -1 and 1.
-From there I just find the direction vector from the current pixel to (0,0) and move
-the points along that line, repeating when they “pass” the center or fall off the
-edge of the screen.</p>
-
-<p>The really noisy one I wrote is this spirally dealie:</p>
-
-<h5><i><a href="https://www.shadertoy.com/view/Ml2GzG">Source</a></i></h5>
-<p><img src="/images/moonshadow2.gif" /></p>
-
-<p>To be honest I’m not totally sure what’s up here, I got it working through a bunch
-of trial and error. Roughly though, what’s going on is a conversion from UV space to
-values between -1 and 1. From there I find the angle between the line formed by
-the current point and (0,0), and the line from (0,0) to (1,0). I also get the
-magnitude of the vector of the current point. I use the magnitude of the vector along
-with the sine function to distort the current point along the line formed from the
-center of the screen to the current point. This results in several wavy patterns radiating
-from the center. So maybe I do kind of know what’s going on? Cool.</p>
-
-<p>Anyway Moon Shadow is sick and it was really fun to have an excuse to write wonky shaders
-beyond just making something silly to look at. It’s been sick to see what other people
-have been doing with them, and I’ve had a blast playing around with different combinations
-of shaders that everyone wrote.</p>
+<p><img src="/images/2016/Feb/DayAtTheBeach.gif" /></p>
 
         </div>
 
     	<hr>
     
         <div class="post">
-            <h2 id="the-last-few-months">The Last Few Months</h2>
-<h5>May 15 2015</h5>
+            <h2 id="voronoi-test">Voronoi Test</h2>
+<h5>February 5 2016</h5>
 
-<p>I’m terrible at updating this blog. A fair bit has happened since the last time I
-wrote an entry. All of GDC for starters. I was actually disappointed with it
-compared to Unite. I found that a lot of the talks were really lacking, and some
-felt unfinished. There were definitely some worthwhile talks (One on the history
-of sidescrolling camera techniques comes to mind) but they were sparse. I could’ve
-made do with only an Independent Games Summit Pass instead of the All Access. Without
-that though, I wouldn’t have been able to get…. free coffee.</p>
+<p>Playing around with parameterizing fullscreen effects based on a Voronoi diagram.</p>
 
-<p><img src="/images/unity-booth.JPG" /></p>
-
-<p>The show floor was cool. I got to play some rad games (Thumper!!) and see lots of
-stuff. The sheer spectacle was pretty impressive, and it was neat to see the kind
-of thing that, previously, I had just seen in gaming magazines as a kid. I had a few
-biz meetings that were alright and got to ask some questions about Unity 5. Some of
-the features just aren’t that appealing, but I’m not the target audience.</p>
-
-<p>I met a lot of people, went to some really cool parties, found out the dangers of
-the open bar, and got to dodge some of the worst winter in a hundred years in Nova Scotia.
-it was a good week. Immediately following GDC, I took the subway over to Oakland
-and then went on tour with Life Chain for 2 weeks. We started off playing a fest
-in Oakland and then went up and down the West Coast.</p>
-
-<p><img src="/images/manic-relapse.JPG" /></p>
-
-<p>We were going to go as far north as Vancouver, but had some border issues and didn’t
-wind up going into Canada. It turns out that the Canadian border can (and will) force
-you to give them your phone’s password and then they go through everything. All your
-photos, emails, facebook messages, texts, etc. It’s an invasive process that leaves you
-feeling pretty violated. That happened and it was a total bummer.</p>
-
-<p>A few weeks after getting back, I made a shift in my working environment and headed
-over to Silverback Games as their Lead Developer. They got me set up with some
-sweet gear and put me to work on an upcoming iOS game.</p>
-
-<p><img src="/images/office-setup.JPG" /></p>
-
-<p>I’ve been there for about a month and a half now and I’ve managed to:</p>
-
-<pre><code>- Cut memory usage on device in half
-- Implement an asynchronous loading pipeline which removed a 10 second load after every level
-- Reduce the overworld's scene size by ~60% with a few tricks to remove serialized data
-- Decompose some pretty heavily tangled code into discrete components
-</code></pre>
-
-<p>Working here is a lot of fun and the team is small, but rock solid. I’m excited to see where we go!</p>
+<p><img src="/images/2016/Feb/voronoitest.gif" /></p>
 
         </div>
 
     	<hr>
     
         <div class="post">
-            <h2 id="train-jam-complete">Train Jam Complete</h2>
-<h5>February 28 2015</h5>
+            <h2 id="ggj16">GGJ16</h2>
+<h5>January 31 2016</h5>
 
-<p>We did it. <a href="http://twitter.com/allanlavell">Allan</a> and I, despite being really sick
-and sleeping terribly for the duration of the jam (although I guess that describes
-anyone who wasn’t in a sleeper car) managed to push out a pretty ridiculous game.
-We called it Infiniclub, and the pitch is basically that it’s Crypt of the Necrodancer
-meets Flappy Bird. We wound up with a playable prototype with standin music and
-some very broken mechanics, and it looks like this:</p>
+<p>Connor and I made a game for GGJ16. Here a few shots of my contributions:</p>
 
-<h5><i>Infiniclub</i></h5>
-<p><img src="/images/Infiniclub.gif" /></p>
+<p><img src="/images/2016/Jan/Hell.gif" /></p>
 
-<p>I managed to put my recent Blonder skills to good use, making a bunch of dancing
-characters and some additional art assets. Everyone was animated in Unity, as I
-still haven’t ventured into rigging and animating anything in animation software.
-We targeted the iPhone, and have a working build on each of our phones where you
-swipe in the direction you want to move, but we also put keyboard controls in place
-because swiping with a mouse is a huge pain for testing.</p>
+<p><img src="/images/2016/Jan/progress.gif" /></p>
 
-<p>The look of the game came together towards the end of the weekend, but was actually
-really straightforward. I put a single rotating directional light with a moderate
-intensity and white colour in the scene, and then gave essentially everything in the
-game a specular material. I tried to pick base colours and specular colours that would
-blend nicely together, and even when it didn’t work the effect was still cool. What
-using the specular material bought us was the effect where everything changes colour
-in a strobing motion at the same time. It also adds a great deal of variety to the
-colour palette in the scene at any given time.</p>
+<p><img src="/images/2016/Jan/Sequence.gif" /></p>
 
-<p>We also put in a pooling system, and used it to define several different types of
-object pools. This lets the game go on forever without needing to instantiate a
-whole bunch of new GameObjects (expensive!) and keeps things running smoothly. We also
-managed to include (per device) persistent high scores which display on the main screen,
-and a system of multipliers and gaining points through collectable items during gameplay.</p>
-
-<p>The big glaring thing we weren’t able to get tight was actually enforcing that the player
-be interacting with the game to the rhythm of the song. Towards the end of the jam,
-we came to the conclusion that Unity’s audio timer (AudioSettings.dspTime) diverges slightly
-from it’s in game timer. We tried to rig up some last minute solutions to compensate for
-this (literally, in the last 20 minutes) but were unable to get it down perfect. So for Train Jam,
-the player can just tap whenever they please and only needs to worry about maintaining
-their multiplier.</p>
-
-<p>Some other notable games included a twin stick jouster where you attack by spinning the
-sticks in motion together, a two player game of chicken with a train where the train is
-totally random and provides no warning, a 4 player kart racer where each player uses
-half of a controller to play, and a racing game where the track is revealed only as players
-die by flying off of it. It was a really cool experience, an interesting way to travel,
-and definitely worth doing. Now we’re all in SF getting ready for GDC tomorrow, staying
-at the Mason St Hostel with what seems like everyone else from the train. Here we go.</p>
+<p><img src="/images/2016/Jan/BurningMan.gif" /></p>
 
         </div>
 
     	<hr>
     
         <div class="post">
-            <h2 id="the-road-to-gdc">The Road To GDC</h2>
-<h5>February 26 2015</h5>
+            <h2 id="limetime">LIMETIME</h2>
+<h5>January 26 2016</h5>
 
-<p>I’m on a train right now somewhere in Idaho, taking part in my first Train Jam.
-Train Jam is this thing where a bunch of devs and artists get on a train in Chicago,
-and then ride it to San Francisco. During the trip, a theme is announced and we all
-make games. I’m working with <a href="http://www.twitter.com/allanlavell">@allanlavell</a>
-on an iPhone game that we haven’t titled yet.</p>
+<p>L I M E T I M E</p>
 
-<h5><i>Pictured here: Allan</i></h5>
-<p><img src="/images/TrainJamGettingStarted.JPG" /></p>
-
-<p>We’re looking to take the gameplay of something like Frogger (or as a more recent
-and direct influence, Crossy Road), and merge it with rhythm based gameplay, ala
-Crypt Of The Necrodancer. So far we’re prototyped a few mechanics, thrown a few
-things out, and have a decent skeleton for moving forward. We should have something
-playable by the end of the night, and then we’ll be left with the remaining ~2 days
-to polish polish polish.</p>
-
-<p>We don’t have much internet access, so we’re working without much help. Fortunately,
-we’ve got all our tools on hand, and we set up an adhoc network to run a git server.
-I can connect to Allan’s machine over the network via ssh, and we’re able to use our
-usual workflow. Some other devs are sharing a git repo on a USB drive and pushing
-pulling to/from that. Constraints force you to get creative.</p>
-
-<h5><i>Git over adhoc network</i></h5>
-<p><img src="/images/TrainJamWorkflow.png" /></p>
-
-<p>This year Train Jam is seemingly a big deal. There is a booth at GDC where the games
-are going to be playable, and some gaming media is going to be giving it some
-coverage. There are also a bunch of sponsors, and as a result, all of the snacks
-on the train are free. I can’t get over this. I was kind of sleep deprived before
-we even got started, I’m probably going to be in brutal shape when we get to SF.</p>
+<p><img src="/images/2016/Jan/LIMETIME.gif" /></p>
 
         </div>
 
     	<hr>
     
         <div class="post">
-            <h2 id="james-quaternion">James Quaternion</h2>
-<h5>February 25 2015</h5>
+            <h2 id="substandard-shader">Substandard Shader</h2>
+<h5>January 23 2016</h5>
 
-<p>For the last week and a half I’ve been working on something tentatively titled <i>James Quaternion</i>.</p>
+<p>Unity 5’s Standard Shader has a few glaring deficiencies. I aim to address these
+with the Substandard Shader:</p>
 
-<p><img src="/images/JamesQuaternionFlightDemo.gif" /></p>
-
-<p>I’m trying to create an aesthetic influenced by Star Fox 64, and the game is
-sort of evolving as I implement different effects and mechanics. It’s been fun,
-and my first real foray into doing anything in 3D beyond really short game jams.
-To get a pixelated effect, I’m pushing the camera to a 256x256 RenderTexture
-which is placed in front of an orthographic camera. This gives me a really blocky
-screen for free, and should also be nice for adding other fullscreen effects
-down the line.</p>
-
-<p>I decided to spend more time in Blender, and have been making almost all of the
-assets for the game using it. The water and land are procedurally generated, but
-the ships, lasers, explosions, etc. have all been made in Blender. Right now I’m
-using a bunch of materials to colour the individual parts of each model, but I want
-to provide vertex colour data to the models and get at that in the shader to save
-from having so many materials in a scene.</p>
-
-<h5><i>The player's fighter</i></h5>
-<p><img src="/images/JamesQuaternionFighter.png" /></p>
-
-<h5><i>An enemy blomp</i></h5>
-<p><img src="/images/JamesQuaternionBlomp.png" /></p>
-
-<p>So far, aside from flying around, you can shoot lasers (both charge shots and
-regular shots) and launch seeker missiles. I implemented the laser charge by using
-a particle system with a negative velocity so that it emits inwards. A parameter
-controls the colour of the charge shot, and will also be tied to damage when damage
-is programmed. The missiles are kind of cheating as they just have force applied
-and use Transform.LookAt to move towards their target, but the effect works well
-enough.</p>
-
-<h5><i>Charge shots and seeker missiles</i></h5>
-<p><img src="/images/JamesQuaternionLaserMissileDemo.gif" /></p>
-
-<p>I implemented a shield by wrapping the fighter in a low poly sphere and modified
-Unity’s transparent shader to produce three ripples based on two offset values.
-Whenever the shield gets hit, the shield gets rotated to face the point of impact,
-and then a coroutine quickly lerps the two values to produce a shield ripple effect.
-I don’t cull the front or back faces, so that you can see the shield ripples all the time.
-I also implemented a boost which is pretty straightforward, but I made the boost fire in
-Blender and have the engine trails changing colour. I was trying to find a way to
-modify Unity’s TrailRenderer Colour array, but it doesn’t seem to be possible without
-editor scripting. (The only way I could get this to work was with the method in PGJ’s <a href="http://forum.unity3d.com/threads/trail-renderer-colors-c.54162/">post</a>)
-This is a bummer because the gradual altering of each element of the array looked a
-lot better than affecting the material all at once. Ah well.</p>
-
-<h5><i>Shield and boost</i></h5>
-<p><img src="/images/JamesQuaternionShieldDemo.gif" /></p>
-
-<p>Over the weekend, I implemented water as well which was a lot of fun. I decided
-to do it using Gerstner waves from this
-<a href="http://graphics.ucsd.edu/courses/rendering/2005/jdewall/tessendorf.pdf">paper’s</a>
-section on “Practical Ocean Wave Algorithms”. The equation for generating waves involves
-summing a series of waves with a few parameters that allow you to affect frequency, amplitude,
-direction, and (cool but not used in my case) curl of the wave. A single wave looks
-like this:</p>
-
-<h5><i>Gerstner Wave</i></h5>
-<p><img src="/images/GerstnerWave.png" /></p>
-
-<p>And it generalizes to this:</p>
-
-<h5><i>Summation of Gerstner Waves</i></h5>
-<p><img src="/images/GerstnerGeneralized.png" /></p>
-
-<p>I implemented that in a vertex shader which gets applied to a flat shaded procedurally
-generated plane, which looks like this:</p>
-
-<h5><i>Oooo, water...</i></h5>
-<p><img src="/images/JamesQuaternionWaterDemo.gif" /></p>
-
-<p>That is pretty simple and could be accomplished with a much less
-involved shader, but whatever, this was fun to write. I really want to be recomputing
-face normals on the fly so that the colours change, but I don’t know of any way to do this
-without using geometry shaders, which I can’t do in Unity on OSX with an integrated
-graphics chip. My assumption here is that I would be able to get information about the
-current triangle in the geometry shader, as opposed to trying to figure that out in
-a vertex shader which has no knowledge of the other vertices. I might write this on
-a windows box or on my iMac at work just to see how it looks. It’s been suggested that
-I could pass in the total size of the mesh and vertex count, and then use information about
-the vertex in world space to figure out information about each triangle. I may give
-this a shot in the near future. Also, if you crank up the poly count and parameter values,
-then you get some big rolling waves:</p>
-
-<h5><i>Big ol' waves</i></h5>
-<p><img src="/images/JamesQuaternionBigWaves.gif" /></p>
-
-<p>I’ve also been working on an effect to distort the area underneath the player. It
-works by passing information about the player’s position into the vertex shader, when
-the player is flying lower than a certain height. A triangle is projected onto the mesh,
-which grows as the player gets closer. Inside this triangle, the waves are distorted
-at a different rate than the rest of the waves, sort of making it look like the
-engines are pushing the waves aside. I haven’t quite nailed this effect down yet
-and it’s especially jarring at the back of the trail, but at present it looks like this:</p>
-
-<h5><i>Wave distortion in relation to the player</i></h5>
-<p><img src="/images/JamesQuaternionWaveDisplacement.gif" /></p>
-
-<p>Anyway, more to come…. at some point!</p>
+<p><img src="/images/2016/Jan/SubStandardShader.gif" /></p>
 
         </div>
 
