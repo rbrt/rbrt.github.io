@@ -55,6 +55,41 @@
 
     
         <div class="post">
+            <h2 id="data-ghost">DATA GHOST</h2>
+<h5>February 20 2016</h5>
+
+<p>I don’t know where the DATA GHOST came from, but once the idea was there, it had
+to be made. I made the ghost by creating a cyclical curve in Blonder</p>
+
+<p><img src="/images/2016/Feb/Blonder.png" />
+<img src="/images/2016/Feb/BlonderGhost.png" /></p>
+
+<p>and then converting it to a mesh. I’ve got a vertex shader handling the mouth and “feet”
+of the ghost, and the trail is a combination of two dense line renderers and a
+particle system.</p>
+
+<p>To get the squares to transition into 1’s and 0’s, I have a single
+128x64 texture that has a 1 on one half and a 0 on the other. Initially the particles
+are randomly given a vertex colour of either black or white. When the particles
+cross a certain point in space relative to the ghost, I blend between a solid colour
+and half of the 1/0 texture. I get either a 1 or a 0 by using the particle’s vertex
+colour to offset the UVs and only grab half of the texture.</p>
+
+<p><img src="/images/2016/Feb/GhostParticleShader.png" /></p>
+
+<p>The background is a scrolling grid rendered in a fragment shader, not much going
+on there except for some fog support to display the INFINITE VOID.</p>
+
+<p>The text is appearing on screen by just using randomish offsets in a coroutine to
+simulate a typing delay, and moving the cursor image based on the length of text.</p>
+
+<p><img src="/images/2016/Feb/DataGhost.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="a-day-at-the-beach">A Day At The Beach</h2>
 <h5>February 6 2016</h5>
 
@@ -114,19 +149,6 @@ using curves to specify geometry in Blonder.</p>
 <p>L I M E T I M E</p>
 
 <p><img src="/images/2016/Jan/LIMETIME.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="substandard-shader">Substandard Shader</h2>
-<h5>January 23 2016</h5>
-
-<p>Unity 5’s Standard Shader has a few glaring deficiencies. I aim to address these
-with the Substandard Shader:</p>
-
-<p><img src="/images/2016/Jan/SubStandardShader.gif" /></p>
 
         </div>
 

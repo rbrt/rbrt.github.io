@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>I make things. Sometimes I post them here.</p>
+    </div>
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="data-ghost">DATA GHOST</h2>
+<h5>February 20 2016</h5>
+
+<p>I don’t know where the DATA GHOST came from, but once the idea was there, it had
+to be made. I made the ghost by creating a cyclical curve in Blonder</p>
+
+<p><img src="/images/2016/Feb/Blonder.png" />
+<img src="/images/2016/Feb/BlonderGhost.png" /></p>
+
+<p>and then converting it to a mesh. I’ve got a vertex shader handling the mouth and “feet”
+of the ghost, and the trail is a combination of two dense line renderers and a
+particle system.</p>
+
+<p>To get the squares to transition into 1’s and 0’s, I have a single
+128x64 texture that has a 1 on one half and a 0 on the other. Initially the particles
+are randomly given a vertex colour of either black or white. When the particles
+cross a certain point in space relative to the ghost, I blend between a solid colour
+and half of the 1/0 texture. I get either a 1 or a 0 by using the particle’s vertex
+colour to offset the UVs and only grab half of the texture.</p>
+
+<p><img src="/images/2016/Feb/GhostParticleShader.png" /></p>
+
+<p>The background is a scrolling grid rendered in a fragment shader, not much going
+on there except for some fog support to display the INFINITE VOID.</p>
+
+<p>The text is appearing on screen by just using randomish offsets in a coroutine to
+simulate a typing delay, and moving the cursor image based on the length of text.</p>
+
+<p><img src="/images/2016/Feb/DataGhost.gif" /></p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>
