@@ -9,7 +9,7 @@ title: DATA GHOST
 I don't know where the DATA GHOST came from, but once the idea was there, it had
 to be made. I made the ghost by creating a cyclical curve in Blonder
 
-<img src="/images/2016/Feb/Blonder.png" style="max-width:50px;">
+<img src="/images/2016/Feb/Blonder.png" style="max-width:50%;">
 <img src="/images/2016/Feb/BlonderGhost.png">
 
 and then converting it to a mesh. I've got a vertex shader handling the mouth and "feet"
