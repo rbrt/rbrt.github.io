@@ -55,6 +55,42 @@
 
     
         <div class="post">
+            <h2 id="blonder-chronicles">Blonder Chronicles</h2>
+<h5>February 27 2016</h5>
+
+<p>I’m pressing on with trying to figure out Blonder a bit more. I’ve been making a
+prototype for a game lately (which I’ll probably post about soonish – I want to
+have it ready for the next <a href="https://www.facebook.com/groups/halifaxgamecollective/">Halifax Game Collective</a> meetup.)
+After I got basic gameplay out of the way, I decided to start making a character
+because as it stands, everything in my game is a cube.</p>
+
+<p>So I hopped into Blonder and modelled, rigged, and animated a humanoid-ish character:</p>
+
+<p><img src="/images/2016/Feb/BlonderAnimation.png" /></p>
+
+<p>I gave it 6 animations; an idle, a run, a jump, a fall, a landing, and one for
+taking damage. I kept the starting and ending frames mostly uniform with the states
+that the animations could transition in and out of so that blending would go nicely.
+I then brought it into Unity and made a pretty straightforward state machine to
+control it, and set up the transitions to blend appropriately.</p>
+
+<p><img src="/images/2016/Feb/StateMachine.png" /></p>
+
+<p>I already have to code dictating all of these behaviours done up, so hooking my
+player controller up to the animator should be pretty straightforward. From here
+I want to make an enemy or two, and then start working on the terrain and scenery
+for the game. As I have the basic game loop established (menu, gameplay, death)
+and a scoring system, I think that adding some pretty basic art will help it feel
+a lot better. The following gif doesn’t show all the animations, but it shows the
+transition from running to jumping to falling to landing:</p>
+
+<p><img src="/images/2016/Feb/RunJumpFall.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="data-ghost">DATA GHOST</h2>
 <h5>February 20 2016</h5>
 
@@ -137,18 +173,6 @@ using curves to specify geometry in Blonder.</p>
 <p><img src="/images/2016/Jan/Sequence.gif" /></p>
 
 <p><img src="/images/2016/Jan/BurningMan.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="limetime">LIMETIME</h2>
-<h5>January 26 2016</h5>
-
-<p>L I M E T I M E</p>
-
-<p><img src="/images/2016/Jan/LIMETIME.gif" /></p>
 
         </div>
 
