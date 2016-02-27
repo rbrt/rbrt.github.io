@@ -24,9 +24,9 @@ control it, and set up the transitions to blend appropriately.
 
 <img src="/images/2016/Feb/StateMachine.png">
 
-I already have to code dictating all of these behaviours done up, so hooking my
+I already have the code dictating all of these behaviours done up, so hooking my
 player controller up to the animator should be pretty straightforward. From here
-I want to make an enemy or two, and then start working on the terrain and scenery
+I want to model an enemy or two, and then start working on the terrain and scenery
 for the game. As I have the basic game loop established (menu, gameplay, death)
 and a scoring system, I think that adding some pretty basic art will help it feel
 a lot better. The following gif doesn't show all the animations, but it shows the
