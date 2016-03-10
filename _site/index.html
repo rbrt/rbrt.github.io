@@ -55,6 +55,48 @@
 
     
         <div class="post">
+            <h2 id="whoops-actually-thats-alright">Whoops! Actually… That’s alright</h2>
+<h5>March 9 2016</h5>
+
+<p>I had a few recent posts about playing with Voronoi Diagrams lately in fullscreen
+effects. The results were interesting, and pretty nonsensical. I’m at a point now
+in my TOP SECRET project (Which I’ll probably post about after GDC) where I need
+to be transitioning between different gameplay scenes. I was thinking that one
+neat method of doing this might be to utilize that Voronoi work a little bit.</p>
+
+<p>I didn’t get very far into doing that before winding up with this:</p>
+
+<p><img src="/images/2016/Mar/VoronoiContinued.gif" /></p>
+
+<p>Which I thought looked kind of neat. It wasn’t too hard to do; I’m just sampling
+an RGB noise texture for my Voronoi points, and then colouring the cell with
+whatever the noise texture’s colour is at the nearest sample point. The source
+looks like this:</p>
+
+<p><img src="/images/2016/Mar/VoronoiSource.png" /></p>
+
+<p>And the result, which is pretty plain, looks like this:</p>
+
+<p><img src="/images/2016/Mar/VoronoiResult.png" /></p>
+
+<p>But then I decided to add some sine waves, and to start trying to colour things
+by their distance from the center of the cell. My implementation is naive (read: wrong)
+but it produced this:</p>
+
+<p><img src="/images/2016/Mar/VoronoiAccident.gif" /></p>
+
+<p>And then I thought, what about if we added more sines… and some cosines too?</p>
+
+<p><img src="/images/2016/Mar/VoronoiAccident2.gif" /></p>
+
+<p>Programming shaders is fun! Now maybe I’ll come out of this with something to
+actually use in my game…</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="blonder-chronicles">Blonder Chronicles</h2>
 <h5>February 27 2016</h5>
 
@@ -155,24 +197,6 @@ using curves to specify geometry in Blonder.</p>
 <p>Playing around with parameterizing fullscreen effects based on a Voronoi diagram.</p>
 
 <p><img src="/images/2016/Feb/voronoitest.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="ggj16">GGJ16</h2>
-<h5>January 31 2016</h5>
-
-<p>Connor and I made a game for GGJ16. Here are a few shots of my contributions:</p>
-
-<p><img src="/images/2016/Jan/Hell.gif" /></p>
-
-<p><img src="/images/2016/Jan/progress.gif" /></p>
-
-<p><img src="/images/2016/Jan/Sequence.gif" /></p>
-
-<p><img src="/images/2016/Jan/BurningMan.gif" /></p>
 
         </div>
 
