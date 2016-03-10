@@ -64,14 +64,9 @@ in my TOP SECRET project (Which I’ll probably post about after GDC) where I ne
 to be transitioning between different gameplay scenes. I was thinking that one
 neat method of doing this might be to utilize that Voronoi work a little bit.</p>
 
-<p>I didn’t get very far into doing that before winding up with this:</p>
-
-<p><img src="/images/2016/Mar/VoronoiContinued.gif" /></p>
-
-<p>Which I thought looked kind of neat. It wasn’t too hard to do; I’m just sampling
-an RGB noise texture for my Voronoi points, and then colouring the cell with
-whatever the noise texture’s colour is at the nearest sample point. The source
-looks like this:</p>
+<p>It isn’t really very hard to do; I’m just sampling an RGB noise texture for my
+Voronoi points, and then colouring the cell with whatever the noise texture’s
+colour is at the nearest sample point. The source looks like this:</p>
 
 <p><img src="/images/2016/Mar/VoronoiSource.png" /></p>
 
@@ -79,13 +74,21 @@ looks like this:</p>
 
 <p><img src="/images/2016/Mar/VoronoiResult.png" /></p>
 
-<p>But then I decided to add some sine waves, and to start trying to colour things
-by their distance from the center of the cell. My implementation is naive (read: wrong)
-but it produced this:</p>
+<p>But then I decided to add some sine waves, because that’s usually what you do
+when you write a fragment shader, and wound up with this:</p>
+
+<p><img src="/images/2016/Mar/VoronoiContinued.gif" /></p>
+
+<p>This was cool and looked more arty than anything I’ve done before lol, but I
+thought it would be cool to try and add some texture. So, I then started trying to
+colour things by their distance from the center of the cell. My implementation is
+naive (read: wrong) but it produced this:</p>
 
 <p><img src="/images/2016/Mar/VoronoiAccident.gif" /></p>
 
-<p>And then I thought, what about if we added more sines… and some cosines too?</p>
+<p>Which I thought was pretty cool. So then I thought, what about if we added more
+sines… and some cosines too? I couldn’t get the result to loop cleanly, but I
+thought it looked nice anyway so here you go:</p>
 
 <p><img src="/images/2016/Mar/VoronoiAccident2.gif" /></p>
 
