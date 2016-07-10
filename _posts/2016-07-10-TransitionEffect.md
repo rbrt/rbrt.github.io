@@ -63,7 +63,7 @@ and used to transition from gameplay to menu screens, gameplay to gameplay... or
 whatever really. Here's an example of it in action to transition from a title screen
 to gameplay in a side project I'm occasionally hacking on:
 
-<img src="images/2016/July/GameTransition.png">
+<img src="images/2016/July/GameTransition.gif">
 
 I plan to make this available on the asset store or on GitHub or something
 eventually. I just need to write up a bit of documentation and handle a few edge
