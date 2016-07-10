@@ -11,7 +11,7 @@ effect much over the last few months due to a pretty hectic period at work, but
 last week I got things solved and managed to make a fairly general package
 that can be dropped into any project. The end result is this:
 
-<img src="images/2016/July/TransitionDemonstration.gif">
+<img src="/images/2016/July/TransitionDemonstration.gif">
 
 It's a transition between two test scenes that both occupy the same space in
 world coordinates, have different geometry, have different ambient light, have
@@ -40,14 +40,14 @@ transition from the "from" texture to the "to" texture. To do this, the shader
 needs to support two textures, and take an interpolation value.
 The transition controller in the scene view looks like this:
 
-<img src="images/2016/July/RenderingQuad.png">
+<img src="/images/2016/July/RenderingQuad.png">
 
 A transition needs to be invoked when a new scene containing an STO is loaded
 additively. The TransitionController will yield on the existence of a new STO,
 and then it will use the following code to control individual rendering of each
 scene once per frame:
 
-<img src="images/2016/July/RenderTransitionFrameSample.png">
+<img src="/images/2016/July/RenderTransitionFrameSample.png">
 
 What is happening here is as follows: We disable all of the renderers and lights
 in the new scene, and then we call the current scene's STO's RenderFrame method.
@@ -63,7 +63,7 @@ and used to transition from gameplay to menu screens, gameplay to gameplay... or
 whatever really. Here's an example of it in action to transition from a title screen
 to gameplay in a side project I'm occasionally hacking on:
 
-<img src="images/2016/July/GameTransition.gif">
+<img src="/images/2016/July/GameTransition.gif">
 
 I plan to make this available on the asset store or on GitHub or something
 eventually. I just need to write up a bit of documentation and handle a few edge
