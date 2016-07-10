@@ -47,7 +47,7 @@ additively. The TransitionController will yield on the existence of a new STO,
 and then it will use the following code to control individual rendering of each
 scene once per frame:
 
-<img src="images/images/2016/July/RenderTransitionFrameSample.png">
+<img src="images/2016/July/RenderTransitionFrameSample.png">
 
 What is happening here is as follows: We disable all of the renderers and lights
 in the new scene, and then we call the current scene's STO's RenderFrame method.
@@ -63,7 +63,7 @@ and used to transition from gameplay to menu screens, gameplay to gameplay... or
 whatever really. Here's an example of it in action to transition from a title screen
 to gameplay in a side project I'm occasionally hacking on:
 
-<img src="images/images/2016/July/GameTransition.png">
+<img src="images/2016/July/GameTransition.png">
 
 I plan to make this available on the asset store or on GitHub or something
 eventually. I just need to write up a bit of documentation and handle a few edge
