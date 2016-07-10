@@ -7,7 +7,7 @@ title: Transition Effect
 <h5>{{ page.date | date: "%B %-d %Y" }}</h5>
 
 Wow, it's been awhile since the last post! I hadn't worked on my transition
-effect much over the last few months to a pretty hectic period at work, but
+effect much over the last few months due to a pretty hectic period at work, but
 last week I got things solved and managed to make a fairly general package
 that can be dropped into any project. The end result is this:
 
