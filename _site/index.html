@@ -55,6 +55,51 @@
 
     
         <div class="post">
+            <h2 id="mountain-drift">Mountain Drift</h2>
+<h5>January 17 2017</h5>
+
+<p>I’ve worked a bit more on the drifting game, and I now have a tentative title:</p>
+
+<p><img src="/images/2017/Jan/MountainDrift.gif" /></p>
+
+<p>I’ve done a bit of menu work, created a system for recording and playing back
+replays, created that title screen, added a system for detecting and scoring drifts,
+added destructible objects, made the car explode when you fly off the road, and
+added some first pass smoke effects.</p>
+
+<p>For the menu, I took the approach of having multiple Canvases for different contexts
+that are all managed by a top level object. This object can smoothly transition
+between menus as the game goes from the title, to gameplay, to failure, and so on.
+I made a utility component that will ensure that certain objects on a prefab are
+always enabled when you apply changes to the prefab. This is useful on the menu
+so that I can disable all of the other canvases to work on one at a time, and not
+worry about accidentally saving disabled canvases. If I didn’t take this approach,
+this is what I would be working with:</p>
+
+<p><img src="/images/2017/Jan/Menus.png" /></p>
+
+<p>For replays, I made a component that you can place on a car, and then it will
+record the transform’s position and rotation at every frame. It also records whether
+or not the tires are smoking, and can be extended to record other necessary data
+pretty easily. The data is stored in a ScriptableObject for now, but I’m going to
+serialize it in a different manner if I wind up making an in-game record replay
+feature. To play it back, a similar component is placed on a stripped down car
+object, and then all of the recorded info is played back each frame. I used it to
+make the title sequence at the top of this post.</p>
+
+<p>For detecting drifts, I’m just looking at the direction the car is traveling and
+comparing it against the car’s forward vector. I’m combining this information with
+the speed at which the car is traveling, and using it to provide a “drift intensity”
+that is used to determine when effects like smoke and skid marks should be enabled,
+and also what score multipliers to apply.</p>
+
+<p><img src="/images/2017/Jan/DriftScore.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="drifting-game">Drifting Game</h2>
 <h5>January 10 2017</h5>
 
@@ -251,41 +296,6 @@ a lot better. The following gif doesn’t show all the animations, but it shows 
 transition from running to jumping to falling to landing:</p>
 
 <p><img src="/images/2016/Feb/RunJumpFall.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="data-ghost">DATA GHOST</h2>
-<h5>February 20 2016</h5>
-
-<p>I don’t know where the DATA GHOST came from, but once the idea was there, it had
-to be made. I made the ghost by creating a cyclical curve in Blonder</p>
-
-<p><img src="/images/2016/Feb/Blonder.png" style="max-width:50%;" />
-<img src="/images/2016/Feb/BlonderGhost.png" /></p>
-
-<p>and then converting it to a mesh. I’ve got a vertex shader handling the mouth and “feet”
-of the ghost, and the trail is a combination of two dense line renderers and a
-particle system.</p>
-
-<p>To get the squares to transition into 1’s and 0’s, I have a single
-128x64 texture that has a 1 on one half and a 0 on the other. Initially the particles
-are randomly given a vertex colour of either black or white. When the particles
-cross a certain point in space relative to the ghost, I blend between a solid colour
-and half of the 1/0 texture. I get either a 1 or a 0 by using the particle’s vertex
-colour to offset the UVs and only grab half of the texture.</p>
-
-<p><img src="/images/2016/Feb/GhostParticleShader.png" /></p>
-
-<p>The background is a scrolling grid rendered in a fragment shader, not much going
-on there except for some fog support to display the INFINITE VOID.</p>
-
-<p>The text is appearing on screen by just using randomish offsets in a coroutine to
-simulate a typing delay, and moving the cursor image based on the length of text.</p>
-
-<p><img src="/images/2016/Feb/DataGhost.gif" /></p>
 
         </div>
 
