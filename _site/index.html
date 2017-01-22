@@ -55,6 +55,55 @@
 
     
         <div class="post">
+            <h2 id="drifting-game">Drifting Game</h2>
+<h5>January 10 2017</h5>
+
+<p>I’ve been playing a lot of Forza Horizon 3 since it came out last year, and it’s
+a total blast. The events in the game aren’t so great, but just driving around
+the “mini Australia” they’ve created is both entertaining and relaxing. What
+I’ve really come to enjoy is drifting around the mountains and hills. The sound
+of tires squealing, the trail of smoke, and the feeling of controlling the car
+while it gets sideways is something I’ve been coming back to for months.</p>
+
+<p>I wanted to try and capture that feeling and make a game that was about only that.
+I started off by looking into Unity’s standard car asset. I was able to get some
+interesting results after several hours of messing around with physics settings;
+four wheel drive with reduced friction on the rear wheels seemed the let the car
+slide around a lot. Unfortunately, even at the best settings I managed to find,
+I found that the settings weren’t general. What worked for sliding would lead to
+a car that could barely accelerate in a straight line. It would also be prone to
+spinning out. I attempted to change between settings on the fly, but the handling
+was still not something I was happy with.</p>
+
+<p>Before continuing on any further, I had to make a little car and a mountain scene
+to drive it around in. I wound up making a track by extruding a mesh along a path
+in Blonder and applying a road texture to it, then I surrounded it with a bunch of
+mountains.</p>
+
+<p><img src="/images/2017/Jan/Mountains.png" /></p>
+
+<p>After that, I took a stab at making a low poly AE86:</p>
+
+<p><img src="/images/2017/Jan/AE86.png" /></p>
+
+<p>Next up I tried slapping a rigidbody on my car and applying forces to it manually.
+I found that applying torque to turn was heavily dependent on how much contact the
+collider had with the ground, but applying forward momentum worked consistently well.
+The solution I wound up utilizing was to apply force to the rigidbody, but then
+to bypass physics for rotation and rotate the transform directly.</p>
+
+<p>This actually feels pretty good, and the car can be adjusted to feel pretty different
+(without being out of control) by tweaking max speed, acceleration, and turn speed.
+Most importantly, the car is really drift-happy, which is exactly what I wanted.
+I made a build and put it on my phone, and even though there wasn’t much to it,
+it made me feel the same way I felt sliding around in Forza. I’m going to keep at
+it.</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="transition-effect">Transition Effect</h2>
 <h5>July 10 2016</h5>
 
@@ -237,29 +286,6 @@ on there except for some fog support to display the INFINITE VOID.</p>
 simulate a typing delay, and moving the cursor image based on the length of text.</p>
 
 <p><img src="/images/2016/Feb/DataGhost.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="a-day-at-the-beach">A Day At The Beach</h2>
-<h5>February 6 2016</h5>
-
-<p>I started messing around with Unity’s procedural skybox shader which is a lot
-of fun. Changing the colour, shape, and movement of the sun has interesting
-results. Also pictured are some birds and a tree I made in Blonder, the addition
-of a chromakeyed swirl, hue shift, and palette swap to the Substandard Shader,
-and some chromatic aberration.</p>
-
-<p>Keying the swirl lets me choose whether it should affect all, most, or none of
-the screen, and using a noise texture to transition between effects gives an
-uneven wipe between chaos and… less chaos. </p>
-
-<p>I brought back some water I implemented a year or so ago, and shaped some terrain
-using curves to specify geometry in Blonder.</p>
-
-<p><img src="/images/2016/Feb/DayAtTheBeach.gif" /></p>
 
         </div>
 

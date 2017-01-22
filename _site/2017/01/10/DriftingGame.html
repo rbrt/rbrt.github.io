@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>I make things. Sometimes I post them here.</p>
+    </div>
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="drifting-game">Drifting Game</h2>
+<h5>January 10 2017</h5>
+
+<p>I’ve been playing a lot of Forza Horizon 3 since it came out last year, and it’s
+a total blast. The events in the game aren’t so great, but just driving around
+the “mini Australia” they’ve created is both entertaining and relaxing. What
+I’ve really come to enjoy is drifting around the mountains and hills. The sound
+of tires squealing, the trail of smoke, and the feeling of controlling the car
+while it gets sideways is something I’ve been coming back to for months.</p>
+
+<p>I wanted to try and capture that feeling and make a game that was about only that.
+I started off by looking into Unity’s standard car asset. I was able to get some
+interesting results after several hours of messing around with physics settings;
+four wheel drive with reduced friction on the rear wheels seemed the let the car
+slide around a lot. Unfortunately, even at the best settings I managed to find,
+I found that the settings weren’t general. What worked for sliding would lead to
+a car that could barely accelerate in a straight line. It would also be prone to
+spinning out. I attempted to change between settings on the fly, but the handling
+was still not something I was happy with.</p>
+
+<p>Before continuing on any further, I had to make a little car and a mountain scene
+to drive it around in. I wound up making a track by extruding a mesh along a path
+in Blonder and applying a road texture to it, then I surrounded it with a bunch of
+mountains.</p>
+
+<p><img src="/images/2017/Jan/Mountains.png" /></p>
+
+<p>After that, I took a stab at making a low poly AE86:</p>
+
+<p><img src="/images/2017/Jan/AE86.png" /></p>
+
+<p>Next up I tried slapping a rigidbody on my car and applying forces to it manually.
+I found that applying torque to turn was heavily dependent on how much contact the
+collider had with the ground, but applying forward momentum worked consistently well.
+The solution I wound up utilizing was to apply force to the rigidbody, but then
+to bypass physics for rotation and rotate the transform directly.</p>
+
+<p>This actually feels pretty good, and the car can be adjusted to feel pretty different
+(without being out of control) by tweaking max speed, acceleration, and turn speed.
+Most importantly, the car is really drift-happy, which is exactly what I wanted.
+I made a build and put it on my phone, and even though there wasn’t much to it,
+it made me feel the same way I felt sliding around in Forza. I’m going to keep at
+it.</p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>
