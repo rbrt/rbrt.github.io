@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>I make things. Sometimes I post them here.</p>
+    </div>
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="forest-drive">Forest Drive</h2>
+<h5>January 19 2017</h5>
+
+<p>This weekend I’ve been at the Global Game Jam spot in Halifax, but I’ve just
+been continuing to work on <i>Mountain Drift</i>. For whatever reason, I’ve been
+really motivated to keep working on this project, so I decided to keep riding that
+momentum.</p>
+
+<p>Before for my smoke, I was using sphere mesh particles with an additive particle
+shader, and this was killing performance all the time. It was fine for a first pass,
+but I needed to do something about it. In keeping with the low poly art style, I
+hopped into Blonder and made a smoke mesh:</p>
+
+<p><img src="/images/2017/Jan/SmokeMesh.png" /></p>
+
+<p>Because this has a decent shape to it, I can use a shader that doesn’t do any alpha
+blending. As soon as I made this change to my smoke particles, performance was no
+longer a problem. I think I like the resulting effect more too, but this probably
+isn’t the final pass.</p>
+
+<p><img src="/images/2017/Jan/NewSmoke.gif" /></p>
+
+<p>I also extended the track and added a finish line. At the base of the mountain,
+there is the beginnings of a forest. I really want to look into various solutions
+for creating nice backgrounds; I’d like to have a distant city, mountain ranges,
+or a seemingly infinite forest and none of those are things I’ve tackled before.
+For now, this is what the finish line looks like:</p>
+
+<p><img src="/images/2017/Jan/Finish.gif" /></p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>

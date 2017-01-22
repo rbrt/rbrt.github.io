@@ -92,6 +92,41 @@ about erasing something important.</p>
     	<hr>
     
         <div class="post">
+            <h2 id="forest-drive">Forest Drive</h2>
+<h5>January 19 2017</h5>
+
+<p>This weekend I’ve been at the Global Game Jam spot in Halifax, but I’ve just
+been continuing to work on <i>Mountain Drift</i>. For whatever reason, I’ve been
+really motivated to keep working on this project, so I decided to keep riding that
+momentum.</p>
+
+<p>Before for my smoke, I was using sphere mesh particles with an additive particle
+shader, and this was killing performance all the time. It was fine for a first pass,
+but I needed to do something about it. In keeping with the low poly art style, I
+hopped into Blonder and made a smoke mesh:</p>
+
+<p><img src="/images/2017/Jan/SmokeMesh.png" /></p>
+
+<p>Because this has a decent shape to it, I can use a shader that doesn’t do any alpha
+blending. As soon as I made this change to my smoke particles, performance was no
+longer a problem. I think I like the resulting effect more too, but this probably
+isn’t the final pass.</p>
+
+<p><img src="/images/2017/Jan/NewSmoke.gif" /></p>
+
+<p>I also extended the track and added a finish line. At the base of the mountain,
+there is the beginnings of a forest. I really want to look into various solutions
+for creating nice backgrounds; I’d like to have a distant city, mountain ranges,
+or a seemingly infinite forest and none of those are things I’ve tackled before.
+For now, this is what the finish line looks like:</p>
+
+<p><img src="/images/2017/Jan/Finish.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="mountain-drift">Mountain Drift</h2>
 <h5>January 17 2017</h5>
 
@@ -251,52 +286,6 @@ to gameplay in a side project I’m occasionally hacking on:</p>
 <p>I plan to make this available on the asset store or on GitHub or something
 eventually. I just need to write up a bit of documentation and handle a few edge
 cases.</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="whoops-actually-thats-alright">Whoops! Actually… That’s alright</h2>
-<h5>March 9 2016</h5>
-
-<p>I had a few recent posts about playing with Voronoi Diagrams lately in fullscreen
-effects. The results were interesting, and pretty nonsensical. I’m at a point now
-in my TOP SECRET project (Which I’ll probably post about after GDC) where I need
-to be transitioning between different gameplay scenes. I was thinking that one
-neat method of doing this might be to utilize that Voronoi work a little bit.</p>
-
-<p>It isn’t really very hard to do; I’m just sampling an RGB noise texture for my
-Voronoi points, and then colouring the cell with whatever the noise texture’s
-colour is at the nearest sample point. The source looks like this:</p>
-
-<p><img src="/images/2016/Mar/VoronoiSource.png" /></p>
-
-<p>And the result, which is pretty plain, looks like this:</p>
-
-<p><img src="/images/2016/Mar/VoronoiResult.png" /></p>
-
-<p>But then I got distracted from the task of making something relevant to my side
-project and decided to add some sine waves, because that’s usually what you do
-when you write a fragment shader, and wound up with this:</p>
-
-<p><img src="/images/2016/Mar/VoronoiContinued.gif" /></p>
-
-<p>This was cool and looked more arty than anything I’ve done before lol, but I
-thought it would be cool to try and add some texture. So, I then started trying to
-colour things by their distance from the center of the cell. My implementation is
-naive (read: wrong) but it produced this:</p>
-
-<p><img src="/images/2016/Mar/VoronoiAccident.gif" /></p>
-
-<p>Which I thought was pretty cool. So then I thought, what about if we added more
-sines… and some cosines too? I couldn’t get the result to loop cleanly, but I
-thought it looked nice anyway so here you go:</p>
-
-<p><img src="/images/2016/Mar/VoronoiAccident2.gif" /></p>
-
-<p>Programming shaders is fun! Now maybe I’ll come out of this with something to
-actually use in my game…</p>
 
         </div>
 
