@@ -18,7 +18,10 @@ Fortunately, I saw a talk at Unite Boston two years ago that covered a large
 chunk of this work: <a href="https://www.youtube.com/watch?v=o9RK6O2kOKo">A coder's guide to spline-based procedural geometry.</a>
 It doesn't provide complete code, and some of the provided code needed some massaging
 to function properly, but it helped me get the generation of a mesh based on an
-extrusion shape and a spline working quickly.
+extrusion shape and a spline working quickly. At first though, I ran into some issues
+with the generated MeshCollider:
+
+<img src="/images/2017/Jan/ShapedTrackError.gif">
 
 After getting that in order, I started converting it and wrapping it with an editor
 tool. So far, I can add/remove spline segments and edit their points and tangents. Doing
