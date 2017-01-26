@@ -55,6 +55,51 @@
 
     
         <div class="post">
+            <h2 id="track-tool">Track Tool</h2>
+<h5>January 25 2017</h5>
+
+<p>I made the track I’ve been using for testing by creating a path in Blonder, creating
+an extrusion shape, extruding that along the path, and converting it to a mesh. I
+thought that I might create some standard objects in Blonder to help try and establish
+a pipeline for creating track segments, but I thought it would be more ideal to have
+something that I could utilize right in Unity. By making a few tools for the engine,
+I’d be able to edit tracks directly in scenes, have access to the spline and point
+orientation data for any purpose, and I’d get to write editor scripts.</p>
+
+<p>Fortunately, I saw a talk at Unite Boston two years ago that covered a large
+chunk of this work: <a href="https://www.youtube.com/watch?v=o9RK6O2kOKo">A coder’s guide to spline-based procedural geometry.</a>
+It doesn’t provide complete code, and some of the provided code needed some massaging
+to function properly, but it helped me get the generation of a mesh based on an
+extrusion shape and a spline working quickly.</p>
+
+<p>After getting that in order, I started converting it and wrapping it with an editor
+tool. So far, I can add/remove spline segments and edit their points and tangents. Doing
+this updates the mesh and its MeshCollider in real time so that I can see how the changes
+look, and also immediately test them with my car.</p>
+
+<p><img src="/images/2017/Jan/TrackTool.gif" /></p>
+
+<p>I can bake the segments down into a single track, or bake them into individual segments.
+I’m not sure how much performance is going to be a concern at this point, but even
+if large tracks work out nicely with respect to framerate, the idea of having reusable
+smaller segments appeals to me too. The baked tracks are ScriptableObjects with their
+curve information exposed. Presently I’m just using this to place road signs along
+the edge of turns, but I’d like to use that information to blend mountains and other
+scenery into the edge of the track.</p>
+
+<p>More immediate next steps for this tool are to add better UV scaling which accounts
+for curves, which the talk linked above goes into. The tool also doesn’t handle
+rotation of points and tangents on the segment curves which are going to be important.
+Another near-future feature will be a visualization for how intense curves are,
+so help me eyeball difficult segments without needing to drive the track.</p>
+
+<p><img src="/images/2017/Jan/CarOnGeneratedTrack.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="forest-drive">Forest Drive</h2>
 <h5>January 22 2017</h5>
 
@@ -215,77 +260,6 @@ Most importantly, the car is really drift-happy, which is exactly what I wanted.
 I made a build and put it on my phone, and even though there wasn’t much to it,
 it made me feel the same way I felt sliding around in Forza. I’m going to keep at
 it.</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="transition-effect">Transition Effect</h2>
-<h5>July 10 2016</h5>
-
-<p>Wow, it’s been awhile since the last post! I hadn’t worked on my transition
-effect much over the last few months due to a pretty hectic period at work, but
-last week I got things solved and managed to make a fairly general package
-that can be dropped into any project. The end result is this:</p>
-
-<p><img src="/images/2016/July/TransitionDemonstration.gif" /></p>
-
-<p>It’s a transition between two test scenes that both occupy the same space in
-world coordinates, have different geometry, have different ambient light, have
-different UI canvases, and have different scene lights. Despite neither scene
-being particularly interesting, the GIF above demonstrates how all of the
-information contained in each scene is preserved and nothing is rendered twice.</p>
-
-<p>To achieve this effect, there are two main components used. The first is a
-SceneTransitionObject, or STO, and the second is the TransitionController.</p>
-
-<p>Any scene that we want to transition to or from needs an STO, and right now it needs
-to be the root of all objects in the scene. This isn’t absolutely required, but
-we would need to do an expensive FindObjectsOfType call instead of a
-GetComponentsInChildren call if we didn’t follow this guideline. An STO has
-references to all of the lights, cameras, canvases, and renderers in a scene and
-in Awake it will figure out if it is the current STO, or the next STO. In other
-words, is it the <em>from</em> or <em>to</em> STO in the transition? All of an STO’s cameras
-are disabled and rendered manually every frame, which gives us total control
-over what we’re displaying.</p>
-
-<p>The TransitionController has two RenderTextures (from and to) and a camera that
-is ultimately responsible for rendering everything in the game. It can either be
-rendering the contents of the “from” STO, the “to” STO, or some combination of
-the two. When a transition is invoked, a special shader is used to smoothly
-transition from the “from” texture to the “to” texture. To do this, the shader
-needs to support two textures, and take an interpolation value.
-The transition controller in the scene view looks like this:</p>
-
-<p><img src="/images/2016/July/RenderingQuad.png" /></p>
-
-<p>A transition needs to be invoked when a new scene containing an STO is loaded
-additively. The TransitionController will yield on the existence of a new STO,
-and then it will use the following code to control individual rendering of each
-scene once per frame:</p>
-
-<p><img src="/images/2016/July/RenderTransitionFrameSample.png" /></p>
-
-<p>What is happening here is as follows: We disable all of the renderers and lights
-in the new scene, and then we call the current scene’s STO’s RenderFrame method.
-This will trigger a render to our “from” RenderTexture. Then we turn on all of
-the renderers and lights in the new scene, disable all of the renderers and lights
-in the current scene, and render the contents of the next scene to the “to” RenderTexture.
-This continues until the transition is done, at which point we set the “to” STO to
-be the current one (or, the “from” STO), unload the previous scene, and resume
-rendering only the “from” STO’s contents.</p>
-
-<p>Using this technique, any shader that interpolates between textures can be inserted
-and used to transition from gameplay to menu screens, gameplay to gameplay… or
-whatever really. Here’s an example of it in action to transition from a title screen
-to gameplay in a side project I’m occasionally hacking on:</p>
-
-<p><img src="/images/2016/July/GameTransition.gif" /></p>
-
-<p>I plan to make this available on the asset store or on GitHub or something
-eventually. I just need to write up a bit of documentation and handle a few edge
-cases.</p>
 
         </div>
 

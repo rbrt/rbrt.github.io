@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>I make things. Sometimes I post them here.</p>
+    </div>
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="track-tool">Track Tool</h2>
+<h5>January 25 2017</h5>
+
+<p>I made the track I’ve been using for testing by creating a path in Blonder, creating
+an extrusion shape, extruding that along the path, and converting it to a mesh. I
+thought that I might create some standard objects in Blonder to help try and establish
+a pipeline for creating track segments, but I thought it would be more ideal to have
+something that I could utilize right in Unity. By making a few tools for the engine,
+I’d be able to edit tracks directly in scenes, have access to the spline and point
+orientation data for any purpose, and I’d get to write editor scripts.</p>
+
+<p>Fortunately, I saw a talk at Unite Boston two years ago that covered a large
+chunk of this work: <a href="https://www.youtube.com/watch?v=o9RK6O2kOKo">A coder’s guide to spline-based procedural geometry.</a>
+It doesn’t provide complete code, and some of the provided code needed some massaging
+to function properly, but it helped me get the generation of a mesh based on an
+extrusion shape and a spline working quickly.</p>
+
+<p>After getting that in order, I started converting it and wrapping it with an editor
+tool. So far, I can add/remove spline segments and edit their points and tangents. Doing
+this updates the mesh and its MeshCollider in real time so that I can see how the changes
+look, and also immediately test them with my car.</p>
+
+<p><img src="/images/2017/Jan/TrackTool.gif" /></p>
+
+<p>I can bake the segments down into a single track, or bake them into individual segments.
+I’m not sure how much performance is going to be a concern at this point, but even
+if large tracks work out nicely with respect to framerate, the idea of having reusable
+smaller segments appeals to me too. The baked tracks are ScriptableObjects with their
+curve information exposed. Presently I’m just using this to place road signs along
+the edge of turns, but I’d like to use that information to blend mountains and other
+scenery into the edge of the track.</p>
+
+<p>More immediate next steps for this tool are to add better UV scaling which accounts
+for curves, which the talk linked above goes into. The tool also doesn’t handle
+rotation of points and tangents on the segment curves which are going to be important.
+Another near-future feature will be a visualization for how intense curves are,
+so help me eyeball difficult segments without needing to drive the track.</p>
+
+<p><img src="/images/2017/Jan/CarOnGeneratedTrack.gif" /></p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>
