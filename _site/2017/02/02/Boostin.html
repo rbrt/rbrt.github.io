@@ -37,16 +37,17 @@
             <h2 id="boostin">Boostin’</h2>
 <h5>February 2 2017</h5>
 
-<p>I’ve banged out a few more features over the last week or so. The most significant
-one is probably the ability to use a boost. Initially the boost worked MarioKart
+<p>I’ve banged out a few more features over the last week or so, the most significant
+of which is the ability to use a boost. Initially, the boost worked MarioKart
 style - as you drift, your boost becomes more powerful. When you exit the drift,
 the boost kicks in. This seemed to work, but was kind of annoying to me. To confirm
 that theory, I got a few  people to play the game at our monthly Halifax Game Collective
 meetup. Almost everyone went flying off the track when it kicked it, so I decided
 to make it something that is activated by the player instead.</p>
 
-<p>Now, as you drift, a boost bar is filled up. Once you’ve accumulated boost, you
-can choose to utilize it at will. This lets you try to correct a bad drift off
+<p>Now, as you drift, a boost bar is filled up. When you successfully complete the
+drift, the boost is added to your <i>Boost Bar</i>. Once you’ve accumulated boost,
+you can activate it at any time. This lets you try to correct a bad drift off
 track, gain speed before a drift, keep momentum through a drift, etc. In terms of
 implementation, boosting just applies a greater amount of force to the car, and
 increases the velocity that the car’s rigidbody is capped at. I experimented for
