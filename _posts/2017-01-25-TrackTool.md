@@ -40,8 +40,8 @@ scenery into the edge of the track.
 
 More immediate next steps for this tool are to add better UV scaling which accounts
 for curves, which the talk linked above goes into. The tool also doesn't handle
-rotation of points and tangents on the segment curves which are going to be important.
+rotation of points and tangents on the segment curves which will be important.
 Another near-future feature will be a visualization for how intense curves are,
-so help me eyeball difficult segments without needing to drive the track.
+to help me eyeball difficult segments without needing to drive the track.
 
 <img src="/images/2017/Jan/CarOnGeneratedTrack.gif">
