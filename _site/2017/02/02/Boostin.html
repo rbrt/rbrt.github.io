@@ -42,19 +42,26 @@ one is probably the ability to use a boost. Initially the boost worked MarioKart
 style - as you drift, your boost becomes more powerful. When you exit the drift,
 the boost kicks in. This seemed to work, but was kind of annoying to me. To confirm
 that theory, I got a few  people to play the game at our monthly Halifax Game Collective
-meetup. Almost everyone went off the track, so I decided to make it something that
-is already activated.</p>
+meetup. Almost everyone went flying off the track when it kicked it, so I decided
+to make it something that is activated by the player instead.</p>
 
 <p>Now, as you drift, a boost bar is filled up. Once you’ve accumulated boost, you
 can choose to utilize it at will. This lets you try to correct a bad drift off
-track, gain speed before a drift, keep momentum through a drift, etc.</p>
+track, gain speed before a drift, keep momentum through a drift, etc. In terms of
+implementation, boosting just applies a greater amount of force to the car, and
+increases the velocity that the car’s rigidbody is capped at. I experimented for
+awhile until finding a value that produced a noticeable amount of speed without
+making the car uncontrollable, but I exaggerate it with some camera shake and FOV
+changes anyway.</p>
 
 <p><img src="/images/2017/Feb/Boostin.gif" /></p>
 
 <p>I also added a lap timer, and some more drifting indications. You’ll now see the
 current drift’s possible score, current distance, and possible boost. Colliding
 into an object, or flying off the track will cancel everything you’ve accumulated
-so far.</p>
+so far. I’ve fixed a few small bugs. Getting some play testing at the meetup was
+a really positive experience. Seeing people have fun and want to keep trying was
+really motivating, even if no one was able to finish the track…</p>
 
         </div>
 
