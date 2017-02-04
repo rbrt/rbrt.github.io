@@ -56,7 +56,7 @@ scene. This works well enough, but it leads to some awkward hacks and entangled
 code when you don’t necessarily want to load a new scene, or when unloading the
 current scene causes problems. The main design flaw that enforced this limitation
 was that my state manager was also my loading controller. In this implementation
-I’ve decomposed to two into separate classes. Now, a transition can load a scene,
+I’ve decomposed the two into separate classes. Now, a transition can load a scene,
 but it isn’t forced to do so.</p>
 
 <p>To facilitate this, I’ve defined several states, and created a StateTransition
@@ -69,11 +69,11 @@ starts up in.</p>
 
 <p><img src="/images/2017/Feb/FlowStates.png" /></p>
 
-<p>To clarify, <code class="highlighter-rouge">startupAction</code> is mostly a debugging state. For example: if I
-want to start immediately in a gameplay scene instead of starting from the intro,
-this will instantiate and set the UI to the correct state, initialize all of the
-scoring variables, automatically pick a default car, and so on. This seems like an
-obvious thing to do now, but in previous implementations, starting from an unconventional
+<p>To clarify, <code class="highlighter-rouge">startupAction</code> is mostly for when debugging. For example: if I want
+to start immediately in a gameplay scene instead of starting from the intro, this
+will instantiate and set the UI to the correct state, initialize all of the scoring
+variables, automatically pick a default car, and so on. This seems like an obvious
+thing to do now, but in previous implementations, starting from an unconventional
 state has necessitated hacks to make various systems work properly.</p>
 
 <p>The state transitions for the game are defined in a Dictionary which maps a given
@@ -85,7 +85,7 @@ state to a StateTransition struct.</p>
 next states, the transition will fail. If it is valid, the “from” and “to” functions
 will be invoked, and the new state will be set as the active state. Sometimes,
 empty functions (<code class="highlighter-rouge">() =&gt; {}</code>) are passed as a transition’s functions. This is done
-when we don’t actually need to load a new scene, or when no other operations need to
+when I don’t actually need to load a new scene, or when no other operations need to
 take place.</p>
 
         </div>
