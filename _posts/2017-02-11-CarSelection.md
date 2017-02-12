@@ -11,7 +11,7 @@ At the very least, an empty scene is loaded and a transition occurs, but I've st
 adding some functionality to those stub scenes as well. Today I spent some time
 fleshing out my car select screen:
 
-<img src="/images/2017/Feb/CarSelect.png">
+<img src="/images/2017/Feb/CarSelect.gif">
 
 Unfortunately I only have one car, but it's still cycling through the list and
 should work fine as more cars are added. To rig that scene up, I made more use of
