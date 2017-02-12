@@ -20,7 +20,7 @@ just recorded the car doing a drift on an isolated stretch of track, found a goo
 point to pause it at, and made that the point where cars will stop to be displayed.
 Pulling back a bit, you can see what cycling through the cars actually looks like:
 
-<img src="/images/2017/Feb/CarSelectTop.png">
+<img src="/images/2017/Feb/CarSelectTop.gif">
 
 I also started work on a background setup. The way this works is I have a camera
 which culls everything that isn't on my "Background" layer, and my regular camera
