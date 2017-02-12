@@ -55,6 +55,42 @@
 
     
         <div class="post">
+            <h2 id="vertex-painting">Vertex Painting</h2>
+<h5>February 12 2017</h5>
+
+<p>Last night I started modeling a second car. I picked something less boxy than the
+AE86 so that it would force me to spend some time getting the round bits correct.
+I still have a long way to go as a 3D artist, but I’m pretty happy with what came
+out. The car I decided to model is an NA Mazda Miata:</p>
+
+<p><img src="/images/2017/Feb/MiataModeling.png" /></p>
+
+<p>I learned a few new things this time. One of these was the mirroring tool, to
+save me from having to repeat the same actions on either side of the car. Since
+cars are almost always symmetrical, they are a great use case for it. However I
+learned about this tool at the end of the process, so I’ll use it from the start
+on the next car. The other thing I learned about was vertex painting. I knew that
+you could give vertices colour information, but I assumed that I would have to stack
+multiple vertices on top of one another to get different coloured faces sharing the
+same vertex. However, it turns out that Blonder will let you select faces and
+then paint them how you like. Perfect!</p>
+
+<p><img src="/images/2017/Feb/VertexPainting.png" /></p>
+
+<p>This let me paint various faces of the model in different shades of black. Then
+when I bring the model in to Unity, I use a shader to look at the vertex’s colour
+and convert that to a corresponding colour defined on the material. For the last
+model, I was using a texture. I like this approach a lot more. I would like to
+determine a cool effect for reflections in the game, maybe just a matcap, but for
+now I’m just making all windows and glass light blue. Here’s the finished-ish model:</p>
+
+<p><img src="/images/2017/Feb/MiataSpin.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="car-selection">Car Selection</h2>
 <h5>February 11 2017</h5>
 
@@ -230,41 +266,6 @@ Another near-future feature will be a visualization for how intense curves are,
 to help me eyeball difficult segments without needing to drive the track.</p>
 
 <p><img src="/images/2017/Jan/CarOnGeneratedTrack.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="forest-drive">Forest Drive</h2>
-<h5>January 22 2017</h5>
-
-<p>This weekend I’ve been getting over a pretty rough cold, but I’ve just been
-continuing to work on <i>Mountain Drift</i>. For whatever reason, I’ve been
-really motivated to keep working on this project, so I decided to keep riding that
-momentum.</p>
-
-<p>Originally for my smoke, I was using sphere mesh particles with an additive particle
-shader, and this was killing performance all the time. It was fine for a first pass,
-but I needed to do something about it. In keeping with the low poly art style, I
-hopped into Blonder and made a smoke mesh:</p>
-
-<p><img src="/images/2017/Jan/SmokeMesh.png" /></p>
-
-<p>Because this has a decent shape to it, I can use a shader that doesn’t do any alpha
-blending. As soon as I made this change to my smoke particles, performance was no
-longer a problem. I think I like the resulting effect more too, but this probably
-isn’t the final pass.</p>
-
-<p><img src="/images/2017/Jan/NewSmoke.gif" /></p>
-
-<p>I also extended the track and added a finish line. At the base of the mountain,
-there is the beginnings of a forest. I really want to look into various solutions
-for creating nice backgrounds; I’d like to have a distant city, mountain ranges,
-or a seemingly infinite forest and none of those are things I’ve tackled before.
-For now, this is what the finish line looks like:</p>
-
-<p><img src="/images/2017/Jan/Finish.gif" /></p>
 
         </div>
 

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>I make things. Sometimes I post them here.</p>
+    </div>
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="vertex-painting">Vertex Painting</h2>
+<h5>February 12 2017</h5>
+
+<p>Last night I started modeling a second car. I picked something less boxy than the
+AE86 so that it would force me to spend some time getting the round bits correct.
+I still have a long way to go as a 3D artist, but I’m pretty happy with what came
+out. The car I decided to model is an NA Mazda Miata:</p>
+
+<p><img src="/images/2017/Feb/MiataModeling.png" /></p>
+
+<p>I learned a few new things this time. One of these was the mirroring tool, to
+save me from having to repeat the same actions on either side of the car. Since
+cars are almost always symmetrical, they are a great use case for it. However I
+learned about this tool at the end of the process, so I’ll use it from the start
+on the next car. The other thing I learned about was vertex painting. I knew that
+you could give vertices colour information, but I assumed that I would have to stack
+multiple vertices on top of one another to get different coloured faces sharing the
+same vertex. However, it turns out that Blonder will let you select faces and
+then paint them how you like. Perfect!</p>
+
+<p><img src="/images/2017/Feb/VertexPainting.png" /></p>
+
+<p>This let me paint various faces of the model in different shades of black. Then
+when I bring the model in to Unity, I use a shader to look at the vertex’s colour
+and convert that to a corresponding colour defined on the material. For the last
+model, I was using a texture. I like this approach a lot more. I would like to
+determine a cool effect for reflections in the game, maybe just a matcap, but for
+now I’m just making all windows and glass light blue. Here’s the finished-ish model:</p>
+
+<p><img src="/images/2017/Feb/MiataSpin.gif" /></p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>
