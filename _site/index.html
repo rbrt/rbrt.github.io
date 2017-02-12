@@ -55,6 +55,45 @@
 
     
         <div class="post">
+            <h2 id="car-selection">Car Selection</h2>
+<h5>February 11 2017</h5>
+
+<p>As it stands right now, there is a stub scene for every state in my game’s flow.
+At the very least, an empty scene is loaded and a transition occurs, but I’ve started
+adding some functionality to those stub scenes as well. Today I spent some time
+fleshing out my car select screen:</p>
+
+<p><img src="/images/2017/Feb/CarSelect.png" /></p>
+
+<p>Unfortunately I only have one car, but it’s still cycling through the list and
+should work fine as more cars are added. To rig that scene up, I made more use of
+my recording system and added some pause/resume functionality to the playback. I
+just recorded the car doing a drift on an isolated stretch of track, found a good
+point to pause it at, and made that the point where cars will stop to be displayed.
+Pulling back a bit, you can see what cycling through the cars actually looks like:</p>
+
+<p><img src="/images/2017/Feb/CarSelectTop.png" /></p>
+
+<p>I also started work on a background setup. The way this works is I have a camera
+which culls everything that isn’t on my “Background” layer, and my regular camera
+can’t see anything on that layer. The background camera is drawn first, and then
+the regular gameplay only clears on depth and draws over it. The background camera
+also rotates in sync with the gameplay camera. Using this setup, I’ll place a bunch
+of things floating in the sky somewhere:</p>
+
+<p><img src="/images/2017/Feb/BackgroundSetup.png" /></p>
+
+<p>Right now it’s just some water I made awhile ago and a giant sun, but it’s easy
+enough to add more things and have different contents for different levels. This
+is how the setup appears in game:</p>
+
+<p><img src="/images/2017/Feb/Background.gif" /></p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="state-management">State Management</h2>
 <h5>February 4 2017</h5>
 
@@ -226,43 +265,6 @@ or a seemingly infinite forest and none of those are things I’ve tackled befor
 For now, this is what the finish line looks like:</p>
 
 <p><img src="/images/2017/Jan/Finish.gif" /></p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="organization">Organization</h2>
-<h5>January 18 2017</h5>
-
-<p>For awhile now, I’ve been using <a href="https://trello.com/">Trello</a> for personal projects to help me stay
-organized. I find that using anything is beneficial to help stay on track, as
-it’s really easy otherwise to forget about something you noticed, or just not be
-sure what to do next after completing a task. I used to keep lists, and at work
-we use JIRA, but lists get really messy and JIRA is just overkill. Trello really
-doesn’t scale well. At my last job we used it and it became very easy to lose track
-of issues and it’s tedious to group tasks for sprints. However, for personal
-projects, it’s great.</p>
-
-<p><img src="/images/2017/Jan/Trello.gif" /></p>
-
-<p>I set up different columns for each category of task that I can think of, and I
-keep a “DONE” pile at the very beginning of my board. Keeping that list of
-finished cards is a nice reminder of what’s been done lately, and it just feels
-good to move tasks over there as they’re completed.</p>
-
-<p>Beyond just keeping track of what needs to be done, I find it really useful to
-be able to leave notes to myself for things to try. If I’m in the middle of
-something and notice a gameplay tweak or art change that’s unrelated to what I’m
-doing, it’s nice to be able to leave a quick note to myself in the relevant column
-so I can remember to look into it later.</p>
-
-<p>I also really like being able to attach images to cards, because I have a whiteboard
-in my office at home, and I find this is a really nice way to keep whatever I draw
-there organized and archived. Then I can clear my whiteboard without having to worry
-about erasing something important.</p>
-
-<p><img src="/images/2017/Jan/WhiteboardTrello.png" /></p>
 
         </div>
 
