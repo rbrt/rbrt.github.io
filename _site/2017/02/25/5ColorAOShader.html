@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BeyondThunderdo.me</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li class="fork"><a href="/">BeyondThunderdo.me</a></li>
+            <li class="fork"><a href="/archive/">Archive</a></li>
+        </nav>
+    </div><!-- end header -->
+
+    <div id="title">
+        <h1>BeyondThunderdo.me</h1>
+        <p>I make things. Sometimes I post them here.</p>
+    </div>
+
+    <div class="wrapper" style="margin-top:3% !important;">
+
+        <div class="post">
+            <h2 id="multiple-color-ao-shader">Multiple Color AO Shader</h2>
+<h5>February 25 2017</h5>
+
+<p>I have a shader for the majority of my art assets now. It lets me colour things
+and apply baked Ambient Occlusion without using any textures. The areas to colour are
+determined via vertex colours as mentioned in a previous post, and the colours for
+each area are specified on a material like this:</p>
+
+<p><img src="/images/2017/Feb/VertexAOMaterial.png" /></p>
+
+<p>The shader works by subtracting a threshold value from each vertex colour, and using
+the <code class="highlighter-rouge">ceil()</code> function to convert it to either 1 or 0. Each colour is lerped with
+the previous colour from highest threshold value to lowest, so that the lowest corresponding
+colour is applied, and anything lower is thrown away.</p>
+
+<p>I also ran into a really annoying issue trying to bake my AO into vertex data
+while still being able to use the vertex colours. The first approach I tried was
+to bake the AO into the vertex colour’s alpha channel. Unfortunately this wasn’t
+possible because Blonder is unable to do it, and extensions I found online didn’t
+work properly. I then tried baking the AO into a second set of vertex colours, but
+due to a limitation in Unity, only the first set of vertex colours are available
+in shaders.</p>
+
+<p>The approach I wound up using it to bake the AO into the model’s UVs. Since I’m
+not using textures (and don’t want to), this seems to work well enough. I’ve considered
+writing a postprocessor in Unity to write lightmap data to a mesh’s vertex colour alpha,
+but that seems like it might be worse to manage.</p>
+
+<p>The relevant shader source to make all of this work is here:</p>
+
+<p><img src="/images/2017/Feb/VertexAOShader.png" /></p>
+
+<p>Using that I can paint a model’s faces with varying degrees of black from a saved
+palette:</p>
+
+<p><img src="/images/2017/Feb/VertexColors.png" /></p>
+
+<p>Then, auto-unwrap the model and do a lightmap pack to generate AO:</p>
+
+<p><img src="/images/2017/Feb/VertexColors.png" /></p>
+
+<p>Then, swap the UVs with the vertex colours:</p>
+
+<p><img src="/images/2017/Feb/UVs.png" /></p>
+
+<p>Then, bake the AO to the vertex colours (which are UVs right now so they’re overwritten):</p>
+
+<p><img src="/images/2017/Feb/VertexAO.png" /></p>
+
+<p>Then I can switch the AO back with the original colour data, bring it into Unity,
+and apply the shader to get this result:</p>
+
+<p><img src="/images/2017/Feb/InteriorInUnity.png" /></p>
+
+<p>Now if only I was better at making 3D art…</p>
+
+        </div>
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53820142-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+</body>
+</html>

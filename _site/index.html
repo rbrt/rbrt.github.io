@@ -55,6 +55,67 @@
 
     
         <div class="post">
+            <h2 id="multiple-color-ao-shader">Multiple Color AO Shader</h2>
+<h5>February 25 2017</h5>
+
+<p>I have a shader for the majority of my art assets now. It lets me colour things
+and apply baked Ambient Occlusion without using any textures. The areas to colour are
+determined via vertex colours as mentioned in a previous post, and the colours for
+each area are specified on a material like this:</p>
+
+<p><img src="/images/2017/Feb/VertexAOMaterial.png" /></p>
+
+<p>The shader works by subtracting a threshold value from each vertex colour, and using
+the <code class="highlighter-rouge">ceil()</code> function to convert it to either 1 or 0. Each colour is lerped with
+the previous colour from highest threshold value to lowest, so that the lowest corresponding
+colour is applied, and anything lower is thrown away.</p>
+
+<p>I also ran into a really annoying issue trying to bake my AO into vertex data
+while still being able to use the vertex colours. The first approach I tried was
+to bake the AO into the vertex colour’s alpha channel. Unfortunately this wasn’t
+possible because Blonder is unable to do it, and extensions I found online didn’t
+work properly. I then tried baking the AO into a second set of vertex colours, but
+due to a limitation in Unity, only the first set of vertex colours are available
+in shaders.</p>
+
+<p>The approach I wound up using it to bake the AO into the model’s UVs. Since I’m
+not using textures (and don’t want to), this seems to work well enough. I’ve considered
+writing a postprocessor in Unity to write lightmap data to a mesh’s vertex colour alpha,
+but that seems like it might be worse to manage.</p>
+
+<p>The relevant shader source to make all of this work is here:</p>
+
+<p><img src="/images/2017/Feb/VertexAOShader.png" /></p>
+
+<p>Using that I can paint a model’s faces with varying degrees of black from a saved
+palette:</p>
+
+<p><img src="/images/2017/Feb/VertexColors.png" /></p>
+
+<p>Then, auto-unwrap the model and do a lightmap pack to generate AO:</p>
+
+<p><img src="/images/2017/Feb/VertexColors.png" /></p>
+
+<p>Then, swap the UVs with the vertex colours:</p>
+
+<p><img src="/images/2017/Feb/UVs.png" /></p>
+
+<p>Then, bake the AO to the vertex colours (which are UVs right now so they’re overwritten):</p>
+
+<p><img src="/images/2017/Feb/VertexAO.png" /></p>
+
+<p>Then I can switch the AO back with the original colour data, bring it into Unity,
+and apply the shader to get this result:</p>
+
+<p><img src="/images/2017/Feb/InteriorInUnity.png" /></p>
+
+<p>Now if only I was better at making 3D art…</p>
+
+        </div>
+
+    	<hr>
+    
+        <div class="post">
             <h2 id="vertex-painting">Vertex Painting</h2>
 <h5>February 12 2017</h5>
 
@@ -218,54 +279,6 @@ into an object, or flying off the track will cancel everything you’ve accumula
 so far. I’ve fixed a few small bugs. Getting some play testing at the meetup was
 a really positive experience. Seeing people have fun and want to keep trying was
 really motivating, even if no one was able to finish the track…</p>
-
-        </div>
-
-    	<hr>
-    
-        <div class="post">
-            <h2 id="track-tool">Track Tool</h2>
-<h5>January 25 2017</h5>
-
-<p>I made the track I’ve been using for testing by creating a path in Blonder, creating
-an extrusion shape, extruding that along the path, and converting it to a mesh. I
-thought that I might create some standard objects in Blonder to help try and establish
-a pipeline for creating track segments, but I thought it would be more ideal to have
-something that I could utilize right in Unity. By making a few tools for the engine,
-I’d be able to edit tracks directly in scenes, have access to the spline and point
-orientation data for any purpose, and I’d get to write editor scripts.</p>
-
-<p>Fortunately, I saw a talk at Unite Boston two years ago that covered a large
-chunk of this work: <a href="https://www.youtube.com/watch?v=o9RK6O2kOKo">A coder’s guide to spline-based procedural geometry.</a>
-It doesn’t provide complete code, and some of the provided code needed some massaging
-to function properly, but it helped me get the generation of a mesh based on an
-extrusion shape and a spline working quickly. At first though, I ran into some issues
-with the generated MeshCollider:</p>
-
-<p><img src="/images/2017/Jan/ShapedTrackError.gif" /></p>
-
-<p>After getting that in order, I started converting it and wrapping it with an editor
-tool. So far, I can add/remove spline segments and edit their points and tangents. Doing
-this updates the mesh and its MeshCollider in real time so that I can see how the changes
-look, and also immediately test them with my car.</p>
-
-<p><img src="/images/2017/Jan/TrackTool.gif" /></p>
-
-<p>I can bake the segments down into a single track, or bake them into individual segments.
-I’m not sure how much performance is going to be a concern at this point, but even
-if large tracks work out nicely with respect to framerate, the idea of having reusable
-smaller segments appeals to me too. The baked tracks are ScriptableObjects with their
-curve information exposed. Presently I’m just using this to place road signs along
-the edge of turns, but I’d like to use that information to blend mountains and other
-scenery into the edge of the track.</p>
-
-<p>More immediate next steps for this tool are to add better UV scaling which accounts
-for curves, which the talk linked above goes into. The tool also doesn’t handle
-rotation of points and tangents on the segment curves which will be important.
-Another near-future feature will be a visualization for how intense curves are,
-to help me eyeball difficult segments without needing to drive the track.</p>
-
-<p><img src="/images/2017/Jan/CarOnGeneratedTrack.gif" /></p>
 
         </div>
 
