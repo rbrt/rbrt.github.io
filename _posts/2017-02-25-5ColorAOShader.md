@@ -15,8 +15,10 @@ each area are specified on a material like this:
 
 The shader works by subtracting a threshold value from each vertex colour, and using
 the `ceil()` function to convert it to either 1 or 0. Each colour is lerped with
-the previous colour from highest threshold value to lowest, so that the lowest corresponding
-colour is applied, and anything lower is thrown away.
+the previous colour from highest threshold value to lowest, so that the lowest
+corresponding colour is applied, and anything lower is thrown away. This lets me
+apply several different colours to a mesh, without using a texture, and while avoiding
+any branching in the fragment shader.
 
 I also ran into a really annoying issue trying to bake my AO into vertex data
 while still being able to use the vertex colours. The first approach I tried was
