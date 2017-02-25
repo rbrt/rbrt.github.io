@@ -42,7 +42,7 @@ palette:
 
 Then, auto-unwrap the model and do a lightmap pack to generate AO:
 
-<img src="/images/2017/Feb/VertexColors.png">
+<img src="/images/2017/Feb/Lightmap.png">
 
 Then, swap the UVs with the vertex colours:
 
@@ -56,5 +56,6 @@ Then I can switch the AO back with the original colour data, bring it into Unity
 and apply the shader to get this result:
 
 <img src="/images/2017/Feb/InteriorInUnity.png">
+<img src="/images/2017/Feb/interior.gif">
 
 Now if only I was better at making 3D art...
