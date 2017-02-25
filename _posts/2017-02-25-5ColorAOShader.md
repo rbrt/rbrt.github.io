@@ -18,9 +18,11 @@ the `ceil()` function to convert it to either 1 or 0. Each colour is lerped with
 the previous colour from highest threshold value to lowest, so that the lowest
 corresponding colour is applied, and anything lower is thrown away. This lets me
 apply several different colours to a mesh, without using a texture, and while avoiding
-any branching in the fragment shader.
+any branching in the fragment shader. It's probably worth pointing out that the shader
+does declare a texture variable, this is because Shaderlab won't give you vertex UVs
+without doing that.
 
-I also ran into a really annoying issue trying to bake my AO into vertex data
+I need those UVs because of an issue I had trying to bake my AO into vertex data
 while still being able to use the vertex colours. The first approach I tried was
 to bake the AO into the vertex colour's alpha channel. Unfortunately this wasn't
 possible because Blonder is unable to do it, and extensions I found online didn't
